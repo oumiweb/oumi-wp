@@ -1,0 +1,78 @@
+@use "../base/setting" as *;
+
+.career {
+  padding: 145px 0 176px 0;
+
+  @include mq("md") {
+    padding: 70px 0;
+  }
+
+}
+.career__title {
+  font-size: 32px;
+  font-weight: $bold;
+}
+
+.career__img {
+  margin-top: 48px;
+  aspect-ratio: 980 / 734;
+
+  img {
+    width: 100%;
+  }
+}
+
+.section__lead {
+  margin-top: 113px;
+  line-height: 1.5;
+
+  @include mq("md") {
+    margin-top: 50px;
+  }
+
+}
+
+.career__text {
+  margin-top: 37px;
+  line-height: 1.5;
+}
+
+.career__list {
+  margin-top: 89px;
+}
+
+.career__item {
+  margin-top: 37px;
+
+}
+
+.career__item-title {
+  font-size: 24px;
+  font-weight: $bold;
+  padding: 12px 21px;
+  background-color: $default-color;
+  border-radius: 10px;
+}
+
+.career__item-text {
+  padding-top: 50px;
+  line-height: 1.8;
+
+}
+
+.career__training-item {
+
+}
+
+.career__training-title {
+
+}
+
+.career__training-number {
+
+}
+
+.career__training-text {
+
+}
+

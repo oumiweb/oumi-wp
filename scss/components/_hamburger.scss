@@ -1,0 +1,371 @@
+@use "../base/setting" as *;
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+.hamburger {
+  position: absolute;
+  top: 21px;
+  right: 30px;
+  z-index: 5;
+  width: 52px;
+  height: 52px;
+  outline: none;
+  -webkit-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
+}
+
+body.is-drawerActive .hamburger {
+  position: fixed;
+}
+
+// @include mq("md") {
+//   position: absolute;
+//  }
+// }
+
+// @include mq("md") {
+// .header--black .hamburger {
+//   display: none;
+//  }
+// }
+
+.hamburger__line {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 52px;
+  height: 2px;
+  background-color: $white;
+  -webkit-transition: inherit;
+          transition: inherit;
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    content: '';
+    -webkit-transition: inherit;
+            transition: inherit;
+  }
+}
+
+.header--black {
+  .hamburger__line {
+    background-color: $black;
+  }
+
+  .hamburger__label {
+    color: $black;
+  }
+}
+
+.hamburger__line::before {
+  top: -15px;
+}
+.hamburger__line::after {
+  top: 15px;
+}
+.hamburger__label {
+  position: absolute;
+  top: 53px;
+  left: 9px;
+  color: $white;
+  font-size: 12px;
+  font-family: Viga;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+
+// バツ印
+
+.hamburger[aria-expanded="true"] .hamburger__line {
+  background-color: transparent;
+  &::before,
+  &::after {
+  top: 0;
+  background-color: $black;
+}
+}
+.hamburger[aria-expanded="true"] .hamburger__line::before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.hamburger[aria-expanded="true"] .hamburger__line::after {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.hamburger__line::before,
+.hamburger__line::after {
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+
+.hamburger[aria-expanded="true"] .hamburger__label {
+  display: none;
+}
+
+.sp-global-menu {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  height: 100vh;
+  background-color: $background-color;
+  color: $black;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+ }
+
+ .sp-global-menu.is-visible {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+@include mq("md") {
+.hamburger {
+  top: 8px;
+  right: 12px;
+ }
+
+.hamburger__line {
+  width: 32px;
+  margin-block: 11px;
+ }
+
+ .hamburger__line::before {
+  top: -9px;
+}
+.hamburger__line::after {
+  top: 9px;
+}
+.hamburger__label {
+  font-size: 10px;
+  top: 30px;
+  left: 12px;
+ }
+}
+
+// ハンバーガーメニューの中身
+.recruit-links {
+  background-color: $background-color;
+  padding-top: 208px;
+
+
+  @include mq("md") {
+    padding-top: 91px;
+  }
+
+  &__inner {
+    width: 100%;
+    max-width: 1926px;
+    padding-left:clamp(16px, 28.26vw, 407px);
+    padding-right: clamp(1rem, 9.1vw, 131px);
+    display: flex;
+    gap: 63px;
+
+    @include mq("md") {
+      flex-direction: column;
+      text-align: center;
+      gap: 40px;
+      margin-left: 0;
+      padding-right: 16px;
+    }
+
+    @media screen and (max-width: 1400px) {
+      padding-left: 120px;
+     }
+
+     
+     
+     @media screen and (max-width: 1024px) {
+      padding-left: 16px;
+      gap: 16px;
+     }
+    }
+  
+
+  &__logo-area {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 250px;
+      height: auto;
+    }
+
+    @include mq("lg") {
+      display: none;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    border-left: 1px solid #AFA86F;
+
+    @include mq("lg") {
+      border-left: none;
+    }
+
+    @include mq("md") {
+      border: none;
+    }
+  }
+
+  &__grid {
+    margin-left: 63px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    
+
+    @include mq("md") {
+      grid-template-columns: 1fr;
+      margin-left: 0;
+      gap: 0;
+    }
+
+    @media screen and (max-width: 1024px) and (min-width: 769px) {
+      margin-left: 16px;
+    }    
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    @include mq("md") {
+        align-items: flex-start;
+       }
+    }
+  
+
+  &__item {
+    border-top: 1px solid #AFA86F;
+    padding: 23px 0;
+    
+    @include mq("md") {
+      width: 100%;
+      text-align: start;
+      &:nth-last-of-type(3) {
+        border-top: none;
+       }
+    }
+
+    &:last-child {
+      border-bottom: 1px solid #AFA86F;
+    }
+ 
+    a {
+      text-decoration: none;
+      display: block;
+      color: $black;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &__en {
+    font-size: clamp(1.125rem, 1.324rem + 0.75vw, 2rem);
+    font-family: Viga;
+  }
+
+  &__ja {
+    margin-top: 11px;
+    font-weight: $bold;
+    font-size: clamp(0.75rem, 0.662rem + 0.38vw, 1rem);
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 24px;
+    margin-top: 40px;
+
+    @include mq("md") {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+.sp-button {
+  display: flex;
+  gap: 30px;
+  margin-top: 64px;
+  max-width: 100%;
+
+  li {
+    flex: 1;
+}
+
+  @include mq("md") {
+    display: block;
+    margin-top: 53px;
+    margin-left: 0;
+    gap: 13px;
+    text-align: left;
+  }
+}
+
+  .entry_btn {
+  &.entry_btn--large {
+    padding: 14px 102px;
+    flex: 1;
+    text-align: center;
+
+    @include mq("md") {
+      margin-top: 13px;
+    }
+
+    @media screen and (min-width: 1950px) {
+      margin-left: 35px;
+    }
+  }
+
+  
+}
+
+.recruitment_btn {
+  &.recruitment_btn--large {
+    transition: none;
+    padding: 14px 96px;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+    margin-left: 63px;
+
+ @include mq("md") {
+    margin-left: 0;
+ }
+}
+}

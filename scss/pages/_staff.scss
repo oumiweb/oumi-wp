@@ -1,0 +1,24 @@
+@use "../base/setting" as *;
+@use "../components/btn" as *;
+@use "../components/hamburger" as *;
+@use "../components/header" as *;
+@use "../components/visual" as *;
+@use "../components/footer" as *;
+
+.staff__inner {
+  padding-inline: clamp(1rem, -3.643rem + 19.81vw, 14.188rem);
+}
+.staff {
+  margin: 130px 0;
+}
+
+
+.staff-content {
+  display: grid; /* グリッドレイアウトにする */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 47px 43px; /* カード同士の隙間 */
+
+  @include mq("md") {
+    justify-items: center;
+  }
+}

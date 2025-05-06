@@ -1,0 +1,48 @@
+@use "../base/setting" as *;
+
+.details {
+  padding: 145px 0 176px 0;
+}
+
+.buttons {
+  margin-top: 70px;
+  display: flex;
+  gap: 49px;
+
+  @include mq("lg") {
+   
+  }
+  
+}
+
+.scroll-button {
+  padding: 18px 47px;
+  background-color: #FAF7F1;
+ border-radius: 40px;
+ font-size: 20px;
+ font-weight: $bold;
+ border: 1px solid $black;
+  color: $black;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+
+  @include mq("lg") {
+   padding: 15px 30px;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+ }
+
+ .scroll-button {
+  &__large {
+    padding: 18px 37px;
+  }
+ }
+
+ .details__title {
+  margin-top: 97px;
+  font-size: 32px;
+ }
+

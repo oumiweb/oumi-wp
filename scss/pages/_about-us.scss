@@ -1,0 +1,470 @@
+@use "../base/setting" as *;
+@use "../components/btn" as *;
+@use "../components/hamburger" as *;
+@use "../components/header" as *;
+@use "../components/visual" as *;
+@use "../components/footer" as *;
+
+.js-lower-page {
+  .header--black {
+    visibility: visible;
+    inset-block-start: 0;
+    position: fixed;
+  }
+
+  .header--white {
+    display: none; // トップページ用ヘッダーは非表示
+  }
+}
+
+.section__mv {
+  position: relative;
+  margin-top: 118px;
+  @include mq("md") {
+    margin-top: 0;
+  }
+
+}
+
+.section__image {
+    width: 100%;
+   aspect-ratio: (1440 / 339);
+  
+   @include mq("md") {
+   height: 350px;
+   object-fit: cover;
+ }
+}
+
+
+.mv__wrapper {
+  position: absolute;
+   // 75px ÷ 1440px × 100 = 約5.2vw
+   top: clamp(35px, 5.2vw, 75px);
+
+   // 232px ÷ 1440px × 100 = 約16.1vw
+   left: clamp(150px, 16.1vw, 232px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include mq("md") {
+    left: 20px;
+    top: 130px;
+  }
+
+}
+
+.mv__title {
+  font-family: Viga;
+  font-size: clamp(2rem, 1.429rem + 2.86vw, 4rem);
+  font-weight: normal;
+
+  @include mq("lg") {
+    font-size: 36px;
+ }
+}
+.mv__title,
+.mv__sub-title,
+.mv__lead {
+  background-color: $white;
+  padding: 3px 10px;
+}
+
+.mv__sub-title,
+.mv__lead {
+  font-weight: $bold;
+  font-size: 24px;
+
+  @include mq("lg") {
+    font-size: 16px;
+ }
+}
+
+.mv__sub-title {
+  margin-top: 21px;
+
+  @include mq("lg") {
+    margin-top: 12px;
+ }
+}
+
+.mv__lead {
+  margin-top: 21px;
+  color: $hover-color;
+
+  @include mq("lg") {
+  margin-top: 14px;
+  font-size: 16px;
+ }
+}
+
+// パンくずリスト
+.breadcrumbs {
+  padding: 20px;
+  display: flex;
+  background-color: #F0F0F0;
+   // 232px ÷ 1440px × 100 = 約16.1vw
+   padding-left: clamp(80px, 16.1vw, 232px);
+
+  li a {
+    font-size: 14px;
+    color: $black;
+  }
+}
+.breadcrumbs li + li::before {
+  content: "＞";
+  padding: 0 0.3em;
+  color: $black;
+  font-size: 14px;
+
+}
+
+// 私たちが大切にしていること
+.importance {
+  padding-top: 66px;
+}
+
+.about-us__inner {
+  width: 100%;
+  max-width: 1926px;
+  padding-left: clamp(1rem, -3.974rem + 21.22vw, 14.375rem);
+  padding-right:clamp(1rem, -3.974rem + 21.22vw, 14.375rem);
+  margin-inline: auto;
+}
+
+.importance__wrapper {
+ display: flex;
+ align-items: center;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+
+  
+  @media screen and (min-width: 1620px) and (max-width: 2560px) {
+    font-size: 2.5rem;
+  }
+
+  @include mq("md") {
+    font-size: 24px;
+   }
+}
+
+.importance__card {
+  margin-top: 35px;
+  background-color: $background-color;
+  padding: 28px 88px;
+  font-size: 20px;
+  border-radius: 10px;
+  counter-increment: card; 
+
+  @include mq("md") {
+    padding: 22px 16px;
+   }
+}
+
+.importance__card:first-of-type {
+  margin-top: 86px;
+}
+
+
+  .importance__number {
+    position: relative;
+    padding: 15px 19px;
+    border: 1px solid $black;
+    border-radius: 50%;
+    font-weight: $bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    
+    &::before {
+      content: "1"; /* ★ここで数字を出す！ */
+      color: $black;
+      content: counter(card);
+    }
+  }  
+
+.importance__heading {
+  margin-left: 14px;
+  font-size: 20px;
+  line-height: 1.5;
+
+  @include mq("md") {
+    font-size: 18px;
+   }
+
+}
+
+.importance__text {
+  margin-top: 21px;
+  line-height: 1.5;
+  font-size: 16px;
+
+}
+
+// 代表メッセージ
+.message {
+  margin-top: 125px;
+
+  
+  @include mq("md") {
+    margin-top: 50px;
+  }
+}
+
+.message__content {
+  margin-top: 109px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include mq("lg") {
+   grid-template-columns: 1fr; 
+  }
+
+  
+  @include mq("md") {
+    margin-top: 40px;
+  }
+}
+
+.message__image {
+  width: 484px;
+  height: 629px;
+
+img {
+  width: 100%;
+  height: auto;
+}
+@media screen and (min-width: 1620px) and (max-width: 2560px) {
+ width: 600px;
+}
+
+
+@include mq("lg") {
+  margin-inline: auto;
+ }
+
+ @include mq("md") {
+  width: 300px;
+  height: auto;
+ }
+}
+
+.message__textarea {
+  flex-grow: 1;
+  position: relative;
+  padding-top: 206px;
+
+  @media screen and (min-width: 1620px) and (max-width: 2560px) {
+   padding-top: 300px; 
+  }
+
+  
+  @include mq("md") {
+    padding-top: 150px;
+  }
+  }
+  
+
+.message__lead-wrapper {
+  position: absolute;
+  top: 18px;
+  left: -63px;
+  width: 100%;
+  
+  @include mq("lg") {
+    left: 10%;
+   }
+  
+}
+
+.message__lead {
+  font-size:clamp(1.125rem, 0.817rem + 1.31vw, 2rem);
+  font-weight: $bold;
+  line-height: 1.5;
+  white-space: nowrap;
+
+  @media screen and (min-width: 1620px) and (max-width: 2560px) {
+    font-size: 2.5rem;
+  }
+  }
+
+
+.message__body {
+  padding-left: 17px;
+  line-height: 2;
+}
+
+.message__name {
+  margin-top: 21px;
+  margin-left: 17px;
+}
+
+
+
+// 事業内容
+.business {
+  margin-top: 105px;
+}
+
+.business__title {
+  font-size: 32px;
+
+  @media screen and (min-width: 1620px) and (max-width: 2560px) {
+    font-size: 2.5rem;
+  }
+}
+
+.business__lead {
+  margin-top: 45px;
+  line-height: 1.5;
+
+}
+
+.business__card {
+  padding: 49px 0;
+  display: flex;
+  border-bottom: 1px solid $default-color;
+
+  @include mq("lg") {
+    flex-direction: column;
+}
+}
+
+.business__card:nth-of-type(3) {
+  border: none;
+}
+
+.business__card:nth-of-type(1) {
+  padding: 82px 0 49px 0;
+}
+
+.business__image {
+  flex-shrink: 0;
+  width: 462px;
+  height: auto;
+  border-radius: 20px;
+
+  @media screen and (max-width: 1200px) {
+    width: 400px;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 340px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block; /* ✅ 下の隙間防止 */
+  }
+}
+
+
+
+.business__text {
+  margin: 22px 10px 22px 41px;
+
+  @include mq("lg") {
+    margin-inline: 0;
+  }
+
+}
+
+.business__category {
+  font-size: 32px;
+  font-weight: $bold;
+  color: $hover-color;
+
+  @include mq("md") {
+    font-size: 24px;
+  }
+}
+
+.business__heading {
+  margin-top: 35px;
+  font-size: 24px;
+  font-weight: $bold;
+  line-height: 1.5;
+
+  @include mq("md") {
+    font-size: 20px;
+  }
+}
+
+.business__description {
+  margin-top: 35px;
+  line-height: 1.5;
+  max-width: 430px;
+}
+
+
+// 会社概要
+
+.company {
+  padding: 83px 0 56px 0;
+
+  @include mq("md") {
+    padding: 50px 0;
+ }
+}
+
+.company__title {
+  font-size: 32px;
+  font-weight: $bold;
+
+  @media screen and (min-width: 1620px) and (max-width: 2560px) {
+    font-size: 2.5rem;
+  }
+}
+
+.company__list {
+ margin: 74px 0; 
+ display: grid;
+ grid-template-columns: 160px 1fr;
+
+ @include mq("md") {
+  display: block;
+  margin: 0;
+ }
+}
+
+.company__term {
+  font-weight: $bold;
+  align-items: center;
+  padding: 36px 0;
+  width: 230px;
+  border-bottom: 1px dashed $black;
+
+ @include mq("md") {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 10px;
+ }
+}
+
+.company__desc {
+  padding: 36px 0;
+ border-bottom: 1px dashed $black;
+ margin-left: 70px;
+ line-height: 1.5;
+
+ @include mq("md") {
+  margin-left: 0;
+  line-height: 1.5;
+  padding: 10px 0;
+ }
+a {
+  color: $black;
+ }
+}
+.company__item:nth-of-type(4) .company__desc {
+  line-height: 1.5;
+}

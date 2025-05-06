@@ -1,0 +1,158 @@
+@use "../base/setting" as *;
+
+.blog-detail {
+  padding: 34px 0 139px 0;
+  background-color: $background-color;
+
+  @include mq("md") {
+    padding-bottom: 30px;
+  }
+}
+
+.blog-detail__article {
+  background-color: $white;
+  padding: 41px 40px 23px 40px;
+  border-radius: 10px;
+}
+
+.blog-detail__inner {
+  padding-left: clamp(1rem, -4rem + 20vw, 20rem);
+  padding-right: clamp(1rem, -4rem + 20vw, 20rem);
+}
+
+.blog-detail__meta {
+  font-size: 0.875rem;
+
+  &::before {
+    content: "";
+    background: url(/img/icon/books.svg) no-repeat center;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+}
+
+
+.blog-detail__title {
+  margin-top: 25px;
+  font-size: 32px;
+  line-height: 1.2;
+
+  @include mq("md") {
+    font-size: 24px;
+  }
+}
+
+.blog-detail__image {
+  margin-top: 41px;
+  aspect-ratio: 720 / 411;
+  img {
+    width: 100%;
+  }
+}
+
+.blog-detail__body {
+  margin-top: 45px;
+  line-height: 1.8;
+
+  p {
+    margin-top: 50px;
+  }
+}
+
+.blog-detail__heading {
+  margin-top: 23px;
+}
+
+.blog-detail__pagination {
+  display: flex;
+  align-items: center;
+  background-color: #F0F0F0;
+
+  @include mq("md"){
+    padding-inline: 16px;
+  }
+}
+
+.pagination-link__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pagination-link__text {
+  color: $black;
+  line-height: 1.5;
+}
+
+.pagination-link__date {
+  color: $black;
+  font-size: 14px;
+}
+
+.blog-detail__pagination-prev {
+  flex: 1;
+  align-items: center;
+ 
+.pagination-link {
+  padding: 31px 95px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 21px;
+  transition: all 0.3s ease;
+
+  @include mq("lg") {
+    padding: 25px 0;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url("../../img/blog/arrow02-left 1.svg") no-repeat center/contain;
+  }
+ &:hover {
+  opacity: 0.5;
+ }
+}
+}
+.blog-detail__separator {
+  width: 1px;
+  height: 56px; /* 棒の長さは自由に調整できる */
+  background-color: $black; /* 線の色 */
+  transform: rotate(0deg); /* 今回は回転させず普通の縦棒でOK */
+}
+
+
+.blog-detail__pagination-next {
+  flex: 1;
+  .pagination-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 21px;
+    transition: all 0.3s ease;
+
+    @include mq("md"){
+      margin-left: 10px;
+    }
+  
+    &::after {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: url("../../img/blog/arrow02-right\ 1.svg") no-repeat center/contain;
+    }
+    &:hover {
+      opacity: 0.5;
+     }
+  }
+}
+
+
+

@@ -1,0 +1,80 @@
+@use "../base/setting" as *;
+@use "../components/btn" as *;
+
+.visual {
+  position: relative;
+  background-color: $background-color;
+}
+
+.visual__image img {
+  width: 100%;
+  aspect-ratio: (1440 / 488);
+  }
+
+.visual__entry-box {
+  position: absolute;
+  padding-block: 50px;
+  padding-left: clamp(16px, 13.8vw, 200px);
+  padding-right: clamp(16px, 13.8vw, 200px);
+  top: calc(355 / 488 * 100%);
+  margin-inline: clamp(1rem, -3.974rem + 21.22vw, 15.125rem);
+  background-color: $white;
+  border-radius: 20px;
+  text-align: center;
+  right: 0;
+  left: 0;
+  animation: fuwafuwa 2s infinite;
+}
+
+.visual__entry-box:hover {
+  animation-play-state: paused;
+}
+
+@keyframes fuwafuwa {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.visual__text {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-weight: $bold;
+  line-height: 1.5;
+}
+
+.visual__entry_button {
+  @include viewmore-btn;
+  background-color: $default-color;
+  font-size: 16px;
+  border: none;
+  padding-block: 25px;
+  padding-inline: clamp(4.875rem, 1.024rem + 16.43vw, 15.813rem);
+  margin-top: 31px;
+
+  &::after {
+    right: 20px;
+  }
+}
+
+@include mq("md") {
+
+  .visual__entry_button::after {
+    mask: url(/img/icon/arrow16px.svg) no-repeat center;
+  }
+
+  .visual__entry-box {
+    padding: 24px  24px 29px 24px;
+   }
+   .visual__text {
+     line-height: 2.5;
+     font-size: 14px;
+   }
+}

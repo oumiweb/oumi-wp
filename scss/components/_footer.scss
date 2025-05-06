@@ -1,0 +1,150 @@
+@use "../base/setting" as *;
+@use "../components/btn" as *;
+
+.footer {
+  padding: 0 64px 64px 64px;
+
+}
+.footer__wrapper {
+  background-color: $background-color;
+  padding-block: 198px 67px;
+  border-radius: 0 0  20px 20px;
+
+ @include mq("md") {
+  padding-block: 198px 24px;
+ }
+  
+}
+
+.footer-inner {
+  width: 100%;
+  max-width: 1926px;
+  padding-inline: clamp(1rem, -2.565rem + 15.21vw, 11.125rem);
+  margin-inline: auto;
+}
+
+.footer__area {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer__head {
+  display: flex;
+  gap:109px;
+}
+
+.footer__logo {
+  
+img {
+   width: 250px;
+    height: 61px;
+    transition: opacity 0.3s ease; 
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.footer__nav {
+  margin-top: 27px;
+
+  .footer__nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 41px 22px;
+    font-weight: $bold;
+  }
+}
+.footer__nav-item a {
+  font-weight: $bold;
+  color: $black;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: rgba($black, 0.5);
+  }
+}
+
+.footer__sns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 61px;
+}
+
+.footer__sns-link {
+  transition: transform 0.3s ease; 
+  &:hover {
+    transform: scale(1.5);
+  }
+}
+
+.footer__copyright {
+  margin-top: 61px;
+  font-size: 12px;
+  color: #999;
+}
+
+.sp-logo {
+  display: none;
+}
+
+
+@include mq("lg") {
+  .footer {
+    padding: 0;
+   }
+
+   .footer__nav {
+    text-align: center;
+    order: 1;
+    margin-left: 0;
+   }
+
+   .footer__area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 51px;
+   }
+
+   .footer__head {
+    display: block;
+   }
+
+   .footer__nav-list {
+    margin: 0;
+    flex-direction: column;
+    row-gap: 20px;
+   }
+
+  .footer__sns {
+    margin-top: 55px;
+    order: 2;
+  }
+
+  .footer__logo {
+    display: none;
+  }
+  .footer__copyright {
+    text-align: center;
+    margin-top: 49px;
+    order: 4;
+  }
+
+  .sp-logo {
+    display: block;
+    margin-top: 29px;
+    order: 3;
+    img {
+    width: 250px;
+    height: 61px;
+    transition: opacity 0.3s ease; 
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  }
+}

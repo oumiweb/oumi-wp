@@ -1,0 +1,408 @@
+@use "../base/setting" as *;
+
+.page-entry {
+  margin-top: 118px; /* ← ヘッダーと同じ高さを確保 */
+}
+
+
+.entry {
+  padding-block: 33px 57px;
+  background-color: #FAF7F1;
+  margin-bottom: 139px;
+}
+
+.entry-inner {
+  padding-left: clamp(16px, calc((100vw - 880px) / 2), 280px);
+  padding-right: clamp(16px, calc((100vw - 880px) / 2), 280px);
+
+}
+
+.entry__wrapper {
+  background-color: $white;
+  padding-block: 58px 81px;
+  border-radius: 10px;
+
+  @include mq("md") {
+  padding-inline: 16px;
+  }
+}
+
+.entry__header {
+  text-align: center;
+  padding-bottom: 95px;
+  border-bottom: 1px dotted $default-color;
+}
+
+.entry__title {
+  font-size: 24px;
+
+  @include mq("md") {
+    font-size: 18px;
+  }
+}
+
+.entry__head {
+  display: inline-block;
+  text-align: left;
+  margin-top: 29px;
+
+  span {
+    color: #AFA86F;
+  }
+}
+
+.entry__lead {
+  text-align: center;
+  font-size: 32px;
+  font-weight: $bold;
+
+  @include mq("md") {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+}
+
+.entry__lead span {
+  color: #AFA86F;
+}
+
+.entry__description {
+  line-height: 1.5;
+  margin-top: 51px;
+}
+
+@include mq("md") {
+  .entry__note {
+    padding-top: 10px;
+  }
+}
+
+// 入力フォーム
+
+.Form-Item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 27px;
+
+  @include mq("md") {
+ flex-direction: column;
+ align-items: flex-start;   
+ }
+}
+
+.Form {
+  padding-top: 97px;
+}
+
+.Form-Item-Label {
+  margin-left: 71px;
+  width: 163px;
+
+  @include mq("md") {
+    margin-left: 0;
+  }
+}
+
+.Form-Item-Label-Required {
+  color: #AFA86F;
+}
+
+.wpcf7-form-control-wrap {
+  width: 65%;
+
+  @include mq("md") {
+    width: 100%;
+  }
+}
+
+.wpcf7-form-control {
+  padding: 20px;
+  width: 100%;
+  background-color: #FAF7F1;
+  border-radius: 10px;
+  border: 1px solid #AFA86F;
+
+  @include mq("md") {
+    margin-top: 10px;
+  }
+}
+// 月日の矢印含む
+
+.form__birth-selects {
+  display: flex;
+  position: relative;
+  gap: 17px;
+
+  @include mq("sm") {
+    display: block;
+  }
+
+
+  span {
+    margin-left: 10px;
+  }
+
+  .Form-Item {
+    position: relative;
+    width: auto;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      top: 45%;
+      right: 23%;
+      border-top: 1px solid $black;
+      border-right: 1px solid $black;
+      transform: rotate(135deg);
+      pointer-events: none; // ←クリックの邪魔をしない
+
+      @include mq("sm") {
+        right: 50%;
+      }
+    }
+  }
+}
+
+.wpcf7-year {
+  width: 168px;
+  margin-right: 10px;
+}
+  @include mq("md") {
+    .year {
+    display: block;
+  }
+}
+
+.month {
+  margin-left: 234px;
+  display: block;
+
+  @include mq("md") {
+    margin-left: 0;
+  }
+}
+@include mq("md") {
+.day {
+  display: block;
+ }
+}
+
+/* Style for the select box */
+.select-box {
+  padding: 22px 52px 22px 20px;
+  border: 1px solid #AFA86F;
+  background-color: #FAF7F1;
+  border-radius: 10px;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 12px;
+  color: $black; 
+  
+  
+}
+
+.select-box:focus {
+  border-color: $black; /* Border color when focused */
+}
+
+.radio-btn {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* ラジオボタンを隠す */
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #AFA86F;
+  background-color: #FAF7F1;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* 選択されたとき */
+input[type="radio"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: $black;
+  /* 中の色（黒） */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wpcf7-radio {
+  background-color: $white;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.wpcf7-list-item {
+  display: flex;
+  align-items: center;
+
+  &:not(:first-of-type) {
+    margin-top: 15px;
+  }
+}
+
+.wpcf7-list-item label {
+  display: flex;
+  align-items: center;
+}
+
+
+.wpcf7-list-item-label {
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: 13px;
+}
+
+.wpcf7-form-control.wpcf7-checkbox {
+  background-color: $white;
+  border: none;
+}
+
+.Form-Item.textarea {
+  display: flex;
+  align-items: flex-start;
+
+  .Form-Item-Label {
+    margin-top: 16px;
+  }
+}
+
+.Form-Item.checkbox {
+  display: flex;
+  align-items: flex-start;
+}
+
+
+.wpcf7-checkbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox {
+  .Form-Item-Label {
+    line-height: 1.5;
+    margin-top: 30px;
+  }
+
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #bcb396;
+  background-color: #FAF7F1;
+  cursor: pointer;
+  position: relative;
+
+  &:checked {
+    background-color: #FAF7F1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 10px;
+    height: 10px;
+    background-color: $black;
+    display: none;
+  }
+
+  &:checked::after {
+    display: block;
+  }
+}
+
+.button-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 84px;
+
+  .wpcf7-list-item,
+  .wpcf7-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+.wpcf7-list-item-label {
+  font-size: 14px;
+}
+
+.button-wrap {
+
+  input[type="checkbox"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #bcb396;
+    background-color: #FAF7F1;
+    cursor: pointer;
+    position: relative;
+
+    &:checked {
+      background-color: #FAF7F1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 8px;
+      height: 8px;
+      background-color: $black;
+      display: none;
+    }
+
+    &:checked::after {
+      display: block;
+    }
+  }
+}
+
+.wpcf7-submit {
+  padding: 20px 96px;
+  width: auto;
+  margin-top: 59px;
+  background-color: $white;
+  border-color: $black;
+  border-radius: 0;
+  transition: all 0.3s ease;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  // 有効なときだけホバーを許可
+  &:enabled:hover {
+    background-color: $black;
+    color: $white;
+  }
+}
+

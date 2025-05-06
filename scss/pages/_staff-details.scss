@@ -1,0 +1,197 @@
+@use "../base/setting" as *;
+
+.staff-detail {
+  background-color: $background-color;
+  padding: 77px 0 81px 0;
+}
+
+.staff-detail__mv {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 85px;
+
+  @include mq("lg") {
+    display: block;
+  }
+}
+
+.staff-detail__lead {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+
+  span {
+    font-weight: $bold;
+    padding: 5px 7px;
+    background-color: $white;
+    color: $black;
+    font-size: 24px;
+  }
+}
+
+span.staff-detail__highlight {
+  font-size: 36px;
+}
+
+.staff-detail__info {
+  font-weight: $bold;
+}
+
+.staff-detail__position {
+  margin-top: 30px;
+  color: $hover-color;
+}
+
+.staff-detail__name {
+  font-size: 24px;
+}
+
+.staff-detail__wrapper {
+  display: flex;
+  align-items: end;
+  margin-top: 12px;
+}
+.staff-detail__year {
+  font-weight: $normal;
+  margin-left: 20px;
+}
+
+.staff-detail__desc {
+  margin-top: 13px;
+  line-height: 1.8;
+  max-width: 605px;
+}
+
+.staff-detail__image {
+  width: 286px;
+  flex-shrink: 0;
+
+  @include mq("lg") {
+    margin-top: 20px;
+    margin-inline: auto;
+  }
+
+  img {
+    width: 100%;
+ }
+}
+
+
+// 普段の業務内容について
+
+.staff-article {
+  padding-top: 101px;
+}
+
+.staff-article__inner {
+  width: 100%;
+  max-width: 1926px;
+  margin-inline: auto;
+  padding-left: clamp(1rem, -3.974rem + 21.22vw, 14.375rem);
+  padding-right:clamp(1rem, -3.974rem + 21.22vw, 14.375rem);
+}
+
+.staff-article__wrapper {
+  display: flex;
+  align-items: stretch;
+  overflow: visible;
+  height: auto;
+  
+  gap: 56px;
+
+  @include mq("md") {
+    gap: 10px;
+  }
+}
+
+.staff-article__content {
+  p {
+    line-height: 1.8;
+  }
+  h2 + p {
+    margin-top: 50px;
+  }
+}
+
+.staff-article__content {
+  width: 75%;
+  ul {
+    padding-top: 50px;
+  }
+  li{
+    line-height: 1.8;
+  }
+}
+.staff-article__title {
+  position: relative;
+ &::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -250px;
+  width: 216px; // 横線の長さ
+  border: 1px solid $black; // 線の色
+ }
+}
+
+.staff-article__title:not(:first-of-type) {
+  margin-top: 23px;
+}
+
+.staff-article__toc {
+  position: sticky;
+  top: 118px;
+  width: 25%;
+  height: fit-content;
+  white-space: nowrap;
+}
+
+.toc-link {
+  display: block;
+  padding-top: 16px;
+  color: #999;
+  line-height: 1.5;
+  font-size: 14px;
+  text-decoration: none;
+
+  &.is-active{
+    color: $black;
+  }
+}
+
+.toc-list:first-child {
+  font-size: 14px;
+  font-weight: $bold;
+  line-height: 1.5;
+  color: #666;
+}
+
+@media screen and (min-width: 1024px) {
+  .toc {
+    display: block;
+  }
+}
+
+.other-members {
+  padding-top: 84px;
+ 
+  h2 {
+    font-size: 32px;
+    line-height: 1.8;
+    font-weight: $bold;
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+}
+.staff-cards-wrapper {
+  margin: 50px 0 139px 0;
+  display: flex;
+  gap: 43px;
+  align-items: center;
+  justify-content: center;
+}
+
+

@@ -1,0 +1,45 @@
+@use "../base/setting" as *;
+@use "../components/btn" as *;
+
+.blog-cards {
+  margin: 130px 0 139px 0;
+
+.card__link .card__item {
+  background-color: $background-color;
+ }
+}
+
+.blog__arrow-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 98px;
+}
+.blog__arrow-btn a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 22px 25px;
+  border: 1px solid $black;
+  border-radius: 50%;
+  font-size: 14px;
+  background-color: $white;
+  color: $black;
+  transition: all 0.3s ease;
+  text-decoration: none;
+
+  &:hover {
+    transform: scale(1.1);
+
+  }
+}
+
+/* アクティブなボタンだけスタイル変更 */
+.blog__arrow-btn a.is-current {
+  background-color: $black;
+  color: $white;
+  border-color: $black;
+  pointer-events: none; /* クリックできなくする */
+  cursor: default; /* カーソルを普通にする（指アイコンにしない） */
+}

@@ -1,0 +1,110 @@
+@use '../base/setting' as *;
+
+@mixin viewmore-btn($text-color: #222222, $hover-bg-color: #222222, $padding: 10px 30px,$icon-url: '/img/icon/big-arrow.svg') {
+  font-size: 1.25rem;
+  font-family: 'Viga', sans-serif;
+  color: $text-color; /* 通常時の文字色 */
+  border: 1px solid $text-color;
+  transition: all 0.3s;
+  padding: $padding;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+
+    /* SVGをマスクとして使用 */
+    mask: url(#{$icon-url}) no-repeat center;
+    -webkit-mask: url(#{$icon-url}) no-repeat center;
+    background-color: $text-color; /* 矢印の色を文字色と統一 */
+  }
+
+  &:hover {
+    background-color: $hover-bg-color; /* ホバー時の背景色 */
+    color: #fff; /* ホバー時の文字色を固定（白） */
+
+    &::after {
+      background-color: #fff; /* ホバー時の矢印の色を白に */
+    }
+  }
+}
+
+
+@mixin circle-btn(
+  $arrow-img, 
+  $size: 3.625rem, 
+  $arrow-size: 1.5rem, 
+  $border-color: $black, 
+  $bg-color: transparent, 
+  $hover-bg-color: $black
+) {
+  position: relative;
+  border-radius: 50%;
+  border: 1px solid $border-color;
+  width: $size; /* 通常時のボタンサイズ */
+  height: $size;
+  background-color: $bg-color;
+
+  /* ✅ 矢印の設定（サイズと色は固定） */
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: $arrow-size; /* 矢印のサイズを固定 */
+    height: $arrow-size;
+    mask: url($arrow-img) no-repeat center;
+    -webkit-mask: url($arrow-img) no-repeat center;
+    background-color: $black; /* 矢印の色も固定 */
+  }
+}
+
+
+// ctaボタン
+@mixin cta-btn($padding: 14px 35px, $text-color: #fff, $bg-color: #222222, $hover-bg-color: #fff, $hover-text-color: #222222) {
+  font-size: 0.875em; // ボタンのフォントサイズ
+  font-weight: 700;
+  color: $text-color; // テキストカラー
+  background-color: $bg-color; // 背景色
+  padding: $padding; // パディング（引数でカスタマイズ可能）
+
+  transition: background-color 0.3s ease, color 0.3s ease; // ホバー時のスムーズなアニメーション
+
+  &:hover {
+    background-color: $hover-bg-color; // ホバー時の背景色
+    color: $hover-text-color; // ホバー時の文字色
+  }
+}
+
+// ボタンスタイル用のmixin
+@mixin category-button($padding: 18px 57px, $image: '.././img/details/down-arrow.svg') {
+  border-radius: 40px; // 角丸の半径
+  border: 1px solid $black; // ボタンの枠線
+  display: inline-block;
+
+  // リンク部分のスタイル
+  .category_btn_link {
+    border-radius: 40px; // リンク部分も角丸を適用
+    padding: $padding; // 動的に指定可能なパディング
+    background-color: $background-color; // 背景色（変数を使用）
+    color: $black; // テキストカラー
+    font-size: 1.25rem; // フォントサイズ
+    font-weight: $bold; // 太字指定
+
+    // 矢印のスタイル
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: url(#{$image}) no-repeat center center / contain; // 動的に指定可能な画像
+      margin-left: 10px;
+    }
+  }
+}

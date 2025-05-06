@@ -1,0 +1,144 @@
+@use "../base/setting" as*;
+
+@media screen and (max-width: 834px) {
+  .buttons {
+    flex-direction: column;
+    text-align: center;
+  }
+ }
+
+.faq {
+  .buttons {
+    margin-top: 145px;
+  }
+}
+
+.scroll-button {
+&--faq {
+  padding: 18px 47px;
+ }
+}
+// アコーディオン
+.accordion {
+  margin-bottom: 139px;
+}
+
+.accordion__title {
+  margin-top: 96px;
+  font-size: 32px;
+  font-weight: $bold;
+
+  @include mq("md") {
+    margin-top: 50px;
+    font-size: 24px;
+   }
+}
+
+
+.accordion__question {
+  padding: 36px 0;
+  font-weight: 400;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.5s;
+  font-size: clamp(14px, 2vw, 16px);
+  border-bottom: 1px solid #AFA86F;
+}
+
+.accordion__title + .accordion__question {
+  margin-top: 113px;
+  border-top: 1px solid #AFA86F;
+
+  @include mq("md") {
+    margin-top: 50px;
+   }
+}
+
+.accordion__question span {
+  font-family: Viga;
+  font-size: 24px;
+  text-align: left;
+  border-radius: 50%;
+  color: $hover-color;
+  margin-right: 20px;
+}
+
+.accordion__question::before,
+.accordion__question::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  border: 2px solid $hover-color;
+  width: 16px;
+  right: 0;
+}
+
+.accordion__question::after {
+  transform: rotate(90deg);
+  transition-duration: .3s;
+}
+
+.accordion__question:hover,
+.accordion__question:active,
+.accordion__question.is-active {
+  transition: 0.5s;
+  color: $hover-color;
+}
+
+.accordion__question.is-active {
+ border-bottom: none;
+}
+
+.accordion__question.is-active::before {
+  opacity: 0;
+}
+
+.accordion__question.is-active::after {
+  transform: rotate(0);
+}
+
+
+.accordion-answer {
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  padding: 0 36px;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition-duration: .3s;
+  border-bottom: 1px solid #AFA86F;
+}
+
+.accordion-answer.is-open {
+  padding-bottom: 36px;
+  line-height: 1.8;
+  font-weight: 400;
+  height: auto;
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .question {
+    font-size: 24px;
+  }
+
+  .accordion__question {
+    display: flex;
+    align-items: center;
+    padding: 10px 30px 10px 10px;
+
+    span {
+      font-size: 16px;
+      padding: 8px 10px;
+      margin-right: 10px;
+    }
+  }
+
+  .accordion__question::before,
+  .accordion__question::after {
+    width: 15px;
+    right: 15px;
+  }
+}
