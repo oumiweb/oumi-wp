@@ -33,9 +33,9 @@
       </h1>
       <nav class="header__nav">
         <ul class="header__nav-list">
-          <li class="header__nav-item"><a href="<?php echo esc_url(home_url('/')); ?>details/" class="recruitment_btn<?php if (is_page('details')) echo ' current'; ?>">募集要項</a></li>
+          <li class="header__nav-item"><a href="<?php echo esc_url(home_url('/')); ?>details/" class="recruitment_btn">募集要項</a></li>
           <li class="header__nav-item">
-            <a href="<?php echo esc_url(home_url('/')); ?>entry/" class="entry_btn<?php if (is_page('entry')) echo ' current'; ?>">
+            <a href="<?php echo esc_url(home_url('/')); ?>entry/" class="entry_btn">
               ENTRY
             </a>
           </li>

@@ -1,12 +1,15 @@
 <?php get_header(); ?>
 
 <main>
+<?php if(have_posts()): ?>
+<?php while(have_posts()): the_post(); ?>
+
   <section class="fv">
     <div class="fv__slider">
       <div class="fv__slide fv__slide1"></div>
       <div class="fv__slide fv__slide2"></div>
     </div>
-    <h2 class="fv__title fade-in delay-1">BECOME A<br>CHALLENGER.</h2>
+    <h2 class="fv__title fade-in delay-1"><?php the_title(); ?></h2>
     <p class="fv__subtitle fade-in delay-2">君の挑戦が、意思が、未来を変える</p>
     <div class="fv__wrapper fade-in delay-3">
       <a class="fv__newsBanner" href="./blog/blog.html">
@@ -332,6 +335,9 @@
       <a href="./entry.html" class="visual__entry_button">ENTRY</a>
     </div>
   </section>
+  <?php endwhile; ?>
+  <?php endif; ?>
+
   </main>
 
   <!-- フッター -->
