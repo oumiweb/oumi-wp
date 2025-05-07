@@ -38,10 +38,6 @@
     </div>
   </div>
 </footer>
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery-3.7.1.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/main.js"></script>
 <?php wp_footer(); ?>
 </body>
 
