@@ -102,19 +102,19 @@
         </div>
       </section>
       <section class="visual">
-        <div class="visual__image">
-          <img src="/img/cta/cta-visual.jpg" alt="オフィスビルの写真">
-        </div>
+      <div class="visual__image">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/cta/cta-visual.jpg" alt="オフィスビルの写真">
+      </div>
 
-        <div class="visual__entry-box">
-          <p class="visual__text">
-            わたしたちと一緒に働く仲間を募集中です。<br>
-            少数精鋭のチームで、<br>
-            あなたも会社と一緒に成長していきましょう。
-          </p>
-          <a href="#" class="visual__entry_button">ENTRY</a>
-        </div>
-      </section>
+      <div class="visual__entry-box">
+        <p class="visual__text">
+          わたしたちと一緒に働く仲間を募集中です。<br>
+          少数精鋭のチームで、<br>
+          あなたも会社と一緒に成長していきましょう。
+        </p>
+        <a href="<?php echo esc_url(home_url('/')); ?>entry/" class="visual__entry_button">ENTRY</a>
+      </div>
+    </section>
     <?php endwhile; ?>
   <?php endif; ?>
 </main>
