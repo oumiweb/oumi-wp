@@ -1,13 +1,10 @@
 <?php get_header(); ?>
 
 <main>
-  <?php if (have_posts()): ?>
-    <?php while (have_posts()): the_post(); ?>
-
       <div class="section__mv">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/staff/staff-fv 1.jpg" alt="オフィス風景" class="section__image">
         <div class="mv__wrapper">
-          <h2 class="mv__title"><?php the_title(); ?>
+          <h2 class="mv__title">STAFF
           </h2>
           <p class="mv__sub-title">社員について</p>
           <p class="mv__lead">弊社社員のリアルな声を紹介しています。</p>
@@ -115,8 +112,6 @@
         <a href="<?php echo esc_url(home_url('/')); ?>entry/" class="visual__entry_button">ENTRY</a>
       </div>
     </section>
-    <?php endwhile; ?>
-  <?php endif; ?>
 </main>
 
 <?php get_footer(); ?>

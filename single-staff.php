@@ -26,14 +26,11 @@
             <!-- 右側：画像 -->
             <div class="staff-detail__image">
               <?php
-              // 現在の投稿のスラッグを取得
-              $slug = get_post_field('post_name', get_post());
+              $image_url = get_field('staff_image');
+              if ($image_url): ?>
+                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_html(get_the_title()); ?>の写真">
+              <?php endif; ?>
 
-              // スラッグに応じた画像パスを生成
-              $image_path = get_stylesheet_directory_uri() . '/img/staff/' . $slug . '.jpg';
-              ?>
-
-              <img src="<?php echo esc_url($image_path); ?>" alt="<?php the_title(); ?>の写真">
             </div>
 
           </div>
@@ -47,21 +44,62 @@
       <article class="staff-article" data-staff-name="西村 優">
         <div class="staff-article__inner">
           <div class="staff-article__wrapper">
-          <?php the_content(); ?>
-        </div>
+            <?php the_content(); ?>
+          </div>
       </article>
 
       <section class="other-members">
         <div class="section-inner">
           <h2 class="other-members__title">その他のメンバー</h2>
 
-          <!-- ★ ここにJavaScriptで動的にカードを入れる！ -->
-          <div id="otherMemberList" class="staff-cards-wrapper">
-            <!-- 最初は空っぽ -->
-          </div>
+          <div class="staff-cards-wrapper">
 
+            <?php
+            $current_id = get_the_ID(); // 今見ているスタッフのIDを取得
+
+            $args = [
+              'post_type' => 'staff', // CPTのスラッグが「staff」の場合
+              'posts_per_page' => 3,
+              'post__not_in' => [$current_id], // 現在の投稿を除外
+              'orderby' => 'rand', // ランダムに並び替え
+            ];
+
+            $staff_query = new WP_Query($args);
+
+            if ($staff_query->have_posts()) :
+              while ($staff_query->have_posts()) : $staff_query->the_post();
+
+                // ACFのフィールド取得
+                $staff_image = get_field('staff_image'); // URL形式で登録している場合
+                $staff_name = get_field('staff_name');
+                $staff_position = get_field('staff_position');
+                $staff_year = get_field('staff_year');
+                $staff_msg1 = get_field('staff_message_1');
+                $staff_msg2 = get_field('staff_message_2');
+            ?>
+                <a href="<?php the_permalink(); ?>" class="staff-card__link">
+                  <div class="staff-cards">
+                    <img src="<?php echo esc_url($staff_image); ?>" alt="<?php echo esc_attr($staff_name); ?>の写真" class="staff-card__image">
+                    <div class="staff-card__message">
+                      <span><?php echo esc_html($staff_msg1); ?></span>
+                      <span><?php echo esc_html($staff_msg2); ?></span>
+                    </div>
+                    <div class="staff-card__info">
+                      <p class="staff-card__position"><?php echo esc_html($staff_position); ?>&nbsp;&nbsp;<?php echo esc_html($staff_year); ?></p>
+                      <p class="staff-card__name"><?php echo esc_html($staff_name); ?></p>
+                    </div>
+                  </div>
+                </a>
+            <?php
+              endwhile;
+              wp_reset_postdata();
+            endif;
+            ?>
+
+          </div>
         </div>
       </section>
+
 
       <section class="visual">
         <div class="visual__image">
