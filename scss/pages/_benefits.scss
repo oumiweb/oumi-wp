@@ -98,7 +98,7 @@
 
 .voice__img {
   margin-top: 36px;
-  aspect-ratio: 980 / 560;
+  aspect-ratio: calc(980 / 560);
 
   img {
     width: 100%;

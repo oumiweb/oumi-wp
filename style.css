@@ -1,13 +1,4 @@
 @charset "UTF-8";
-
-
-/*
-Theme Name: 採用特設ページtetote
-Description: 株式会社tetoteのテンプレートです
-Version: 1.0
-Author: oumi
-*/
-
 *,
 *::before,
 *::after {
@@ -1682,7 +1673,7 @@ body.is-drawerActive .hamburger {
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  aspect-ratio: 156/180;
+  aspect-ratio: 0.8666666667;
 }
 
 .card__category {
@@ -2411,6 +2402,7 @@ body.is-drawerActive .hamburger {
   top: 18px;
   left: -63px;
   width: 100%;
+  color: pink;
 }
 @media screen and (max-width: 1024px) {
   .message__lead-wrapper {
@@ -2610,7 +2602,7 @@ body.is-drawerActive .hamburger {
 }
 
 .staff {
-  margin: 130px 0;
+  margin: 30px 0;
 }
 
 .staff-content {
@@ -2792,6 +2784,9 @@ span.staff-detail__highlight {
   .toc {
     display: block;
   }
+  .staff-detail__highlight {
+    line-height: 1.2;
+  }
 }
 .other-members {
   padding-top: 84px;
@@ -2901,7 +2896,7 @@ span.staff-detail__highlight {
 
 .blog-detail__image {
   margin-top: 41px;
-  aspect-ratio: 720/411;
+  aspect-ratio: 1.7518248175;
 }
 .blog-detail__image img {
   width: 100%;
@@ -3109,7 +3104,7 @@ span.staff-detail__highlight {
 
 .voice__img {
   margin-top: 36px;
-  aspect-ratio: 980/560;
+  aspect-ratio: 1.75;
 }
 .voice__img img {
   width: 100%;
@@ -3131,7 +3126,7 @@ span.staff-detail__highlight {
 
 .career__img {
   margin-top: 48px;
-  aspect-ratio: 980/734;
+  aspect-ratio: 1.3351498638;
 }
 .career__img img {
   width: 100%;

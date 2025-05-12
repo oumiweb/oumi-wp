@@ -20,7 +20,7 @@
 
 .fv__slider {
   position: relative;
-  aspect-ratio: (1440 / 823);
+  aspect-ratio: calc(1440 / 823);
   width: 100%;
   overflow: hidden;
   z-index: 0;
@@ -1122,7 +1122,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center center;
-    aspect-ratio: 156 / 180;
+    aspect-ratio: calc(156 / 180);
   }
 }
 

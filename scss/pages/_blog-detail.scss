@@ -47,7 +47,7 @@
 
 .blog-detail__image {
   margin-top: 41px;
-  aspect-ratio: 720 / 411;
+  aspect-ratio: calc(720 / 411);
   img {
     width: 100%;
   }

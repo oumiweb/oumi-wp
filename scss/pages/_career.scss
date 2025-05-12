@@ -15,7 +15,7 @@
 
 .career__img {
   margin-top: 48px;
-  aspect-ratio: 980 / 734;
+  aspect-ratio: calc(980 / 734);
 
   img {
     width: 100%;
@@ -60,19 +60,4 @@
 
 }
 
-.career__training-item {
-
-}
-
-.career__training-title {
-
-}
-
-.career__training-number {
-
-}
-
-.career__training-text {
-
-}
 
