@@ -10,7 +10,7 @@ function create_staff_post_type() {
       'has_archive' => true,
       // 一覧ページを有効にするarchive-staff.phpが使える
       'menu_position' => 5,
-      'supports' => ['title', 'editor', 'thumbnail'],
+      'supports' => ['title', 'editor', 'thumbnail', 'page-attributes'],
       'rewrite' => ['slug' => 'staff'], //パーマリングをstaffに設定
       'show_in_rest' => true, // ブロックエディター対応（必要なら）
     ]
