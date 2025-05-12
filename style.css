@@ -2228,6 +2228,7 @@ body.is-drawerActive .hamburger {
 }
 
 .breadcrumbs {
+  margin-top: 118px;
   padding: 20px;
   display: flex;
   background-color: #F0F0F0;
@@ -2962,7 +2963,7 @@ span.staff-detail__highlight {
   display: block;
   width: 24px;
   height: 24px;
-  background: url("../../img/blog/arrow02-left 1.svg") no-repeat center/contain;
+  background: url("../../img/blog/arrow02-left.png") no-repeat center/contain;
 }
 .blog-detail__pagination-prev .pagination-link:hover {
   opacity: 0.5;
@@ -2995,7 +2996,7 @@ span.staff-detail__highlight {
   display: block;
   width: 24px;
   height: 24px;
-  background: url("../../img/blog/arrow02-right 1.svg") no-repeat center/contain;
+  background: url("../../img/blog/arrow02-right.png") no-repeat center/contain;
 }
 .blog-detail__pagination-next .pagination-link:hover {
   opacity: 0.5;

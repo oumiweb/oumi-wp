@@ -20,13 +20,13 @@
                   <p class="staff-detail__year"><?php the_field('staff_year'); ?></p>
                 </div>
               </div>
-              <p class="staff-detail__desc"><?php the_field('staff_desc'); ?></p>
+              <p class="staff-detail__desc"><?php the_field('staff_prof'); ?></p>
             </div>
 
             <!-- 右側：画像 -->
             <div class="staff-detail__image">
-              <?php
-              $image_url = get_field('staff_image');
+            <?php
+              $image_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
               if ($image_url): ?>
                 <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_html(get_the_title()); ?>の写真">
               <?php endif; ?>
@@ -41,7 +41,7 @@
         <?php if (function_exists('bcn_display')) bcn_display_list(); ?>
       </ol>
 
-      <article class="staff-article" data-staff-name="西村 優">
+      <article class="staff-article" data-staff-name="<?php the_field('staff_name'); ?>">
         <div class="staff-article__inner">
           <div class="staff-article__wrapper">
             <?php the_content(); ?>
@@ -70,7 +70,7 @@
               while ($staff_query->have_posts()) : $staff_query->the_post();
 
                 // ACFのフィールド取得
-                $staff_image = get_field('staff_image'); // URL形式で登録している場合
+                $staff_image = get_the_post_thumbnail_url(get_the_ID(), 'medium'); // URL形式で登録している場合
                 $staff_name = get_field('staff_name');
                 $staff_position = get_field('staff_position');
                 $staff_year = get_field('staff_year');

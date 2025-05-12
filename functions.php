@@ -1,4 +1,10 @@
-<?php
+<?php 
+// 管理画面｜アイキャッチ画像の設定領域を表示
+function theme_setup(){
+  add_theme_support('post-thumbnails');
+}
+add_action('after_setup_theme', 'theme_setup');
+
 function create_staff_post_type() {
   register_post_type('staff',
   // 投稿タイプのスラッグ
