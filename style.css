@@ -2402,7 +2402,6 @@ body.is-drawerActive .hamburger {
   top: 18px;
   left: -63px;
   width: 100%;
-  color: pink;
 }
 @media screen and (max-width: 1024px) {
   .message__lead-wrapper {
