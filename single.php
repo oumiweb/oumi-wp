@@ -11,7 +11,7 @@
           <article class="blog-detail__article">
             <header>
               <p class="blog-detail__meta">社内研修　2023.03.25</p>
-              <h2 class="blog-detail__title">新入社員向けに、入社前研修を行いました。</h2>
+              <h2 class="blog-detail__title"><?php the_title(); ?></h2>
               <?php if (has_post_thumbnail()): ?>
                 <div class="blog-detail__image">
                   <?php the_post_thumbnail('full'); ?>
