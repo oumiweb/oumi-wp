@@ -1695,11 +1695,12 @@ body.is-drawerActive .hamburger {
   margin: 23px 0 30px;
   line-height: 1.5;
   text-decoration: underline solid #222222;
-}
-
-.card--trip .card__title {
-  margin-top: 18px;
-  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 4.5em;
 }
 
 .card__date {

@@ -25,7 +25,7 @@
 
             <!-- 右側：画像 -->
             <div class="staff-detail__image">
-            <?php
+              <?php
               $image_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
               if ($image_url): ?>
                 <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_html(get_the_title()); ?>の写真">

@@ -1,11 +1,8 @@
 <?php 
 // 管理画面｜アイキャッチ画像の設定領域を表示
 function theme_setup(){
-  add_theme_support('post-thumbnails');
-
-  // 投稿タイプ「post」と「page」に対してアイキャッチを有効化（明示）
-  add_post_type_support('post', 'thumbnail');
-  add_post_type_support('page', 'thumbnail');
+  // アイキャッチ画像を有効化（全体または特定の投稿タイプ）
+  add_theme_support('post-thumbnails', ['post', 'staff']); // 'post'はブログ投稿、'staff'はカスタム投稿タイプ
 }
 add_action('after_setup_theme', 'theme_setup');
 

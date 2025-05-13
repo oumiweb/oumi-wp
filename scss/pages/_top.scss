@@ -1084,9 +1084,7 @@
 
 }
 
-.card {
-  
-}
+
 
 .card__link {
   display: block;
@@ -1146,11 +1144,13 @@
   margin: 23px 0 30px;
   line-height: 1.5;
   text-decoration: underline solid $black;
-}
+  display: -webkit-box;
+  -webkit-line-clamp: 3;     // 最大2行まで表示
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: calc(1.5em * 3);   // 2行分の高さを指定
 
-.card--trip .card__title {
-  margin-top: 18px;
-  margin-bottom: 10px;
 }
 
 .card__date {
