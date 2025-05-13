@@ -9,14 +9,15 @@
  }
 }
 
-.blog__arrow-btn {
+.wp-pagenavi {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 32px;
   margin-top: 98px;
-}
-.blog__arrow-btn a {
+
+ a,
+ span {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -36,10 +37,11 @@
 }
 
 /* アクティブなボタンだけスタイル変更 */
-.blog__arrow-btn a.is-current {
+.current {
   background-color: $black;
   color: $white;
   border-color: $black;
   pointer-events: none; /* クリックできなくする */
   cursor: default; /* カーソルを普通にする（指アイコンにしない） */
+ }
 }

@@ -27,25 +27,39 @@
   </section>
   
   <div class="blog-detail__pagination">
+  <?php
+    $prev_post = get_previous_post();
+    $next_post = get_next_post();
+  ?>
     <div class="blog-detail__pagination-prev">
-      <a href="./blog-detail2.html" class="pagination-link">
+    <?php if ($prev_post): ?>
+      <a href="<?php echo get_permalink($prev_post->ID); ?>" class="pagination-link">
         <div class="pagination-link__text-group">
-          <p class="pagination-link__text">内定者向け研修を行いました。</p>
-          <time class="pagination-link__date" datetime="2024-08-25">2024.08.25</time>
+          <p class="pagination-link__text"><?php echo esc_html(get_the_title($prev_post->ID)); ?></p>
+          <time class="pagination-link__date" datetime="<?php echo get_the_date('Y-m-d', $prev_post->ID); ?>">
+            <?php echo get_the_date('Y.m.d', $prev_post->ID); ?>
+          </time>
         </div>
         <span class="visually-hidden">前の記事へ</span>
       </a>
+      <?php endif; ?>
     </div>
     <!-- 真ん中の線 -->
     <div class="blog-detail__separator"></div>
+
+    <!-- 次の記事 -->
     <div class="blog-detail__pagination-next">
-      <a href="./blog-detail4.html" class="pagination-link">
+    <?php if ($next_post): ?>
+      <a href="<?php echo get_permalink($next_post->ID); ?>" class="pagination-link">
         <div class="pagination-link__text-group">
-          <p class="pagination-link__text">【新卒採用2024】エントリー受付中！</p>
-          <time class="pagination-link__date" datetime="2024-08-25">2024.08.25</time>
+          <p class="pagination-link__text"><?php echo esc_html(get_the_title($next_post->ID)); ?></p>
+          <time class="pagination-link__date" datetime="<?php echo get_the_date('Y-m-d', $next_post->ID); ?>">
+            <?php echo get_the_date('Y.m.d', $next_post->ID); ?>
+          </time>
         </div>
         <span class="visually-hidden">次の記事へ</span>
       </a>
+    <?php endif; ?>
     </div>
   </div>
 </main>

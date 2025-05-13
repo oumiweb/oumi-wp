@@ -50,4 +50,5 @@
     </div>
   </section>
 
+  <!-- フッター -->
   <?php get_footer(); ?>

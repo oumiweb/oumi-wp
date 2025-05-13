@@ -105,8 +105,7 @@
   padding: 20px;
   display: flex;
   background-color: #F0F0F0;
-   // 232px ÷ 1440px × 100 = 約16.1vw
-   padding-left: clamp(80px, 16.1vw, 232px);
+  padding-left: clamp(1rem, -4rem + 20vw, 20rem);
 
   li a {
     font-size: 14px;
