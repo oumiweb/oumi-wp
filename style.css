@@ -2228,11 +2228,10 @@ body.is-drawerActive .hamburger {
 }
 
 .breadcrumbs {
-  margin-top: 118px;
   padding: 20px;
   display: flex;
   background-color: #F0F0F0;
-  padding-left: clamp(80px, 16.1vw, 232px);
+  padding-left: clamp(1rem, -4rem + 20vw, 20rem);
 }
 .breadcrumbs li a {
   font-size: 14px;
@@ -2815,15 +2814,14 @@ span.staff-detail__highlight {
   background-color: #FAF7F1;
 }
 
-.blog__arrow-btn {
+.wp-pagenavi {
   display: flex;
-  align-items: center;
   justify-content: center;
   gap: 32px;
   margin-top: 98px;
 }
-
-.blog__arrow-btn a {
+.wp-pagenavi a,
+.wp-pagenavi span {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -2833,20 +2831,19 @@ span.staff-detail__highlight {
   font-size: 14px;
   background-color: #ffffff;
   color: #222222;
-  transition: all 0.3s ease;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
-.blog__arrow-btn a:hover {
+.wp-pagenavi a:hover,
+.wp-pagenavi span:hover {
   transform: scale(1.1);
 }
-
-/* アクティブなボタンだけスタイル変更 */
-.blog__arrow-btn a.is-current {
+.wp-pagenavi .current {
   background-color: #222222;
   color: #ffffff;
   border-color: #222222;
-  pointer-events: none; /* クリックできなくする */
-  cursor: default; /* カーソルを普通にする（指アイコンにしない） */
+  pointer-events: none;
+  cursor: default;
 }
 
 .blog-detail {

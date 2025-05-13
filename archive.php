@@ -19,7 +19,7 @@
           <article class="card">
           <?php 
           while(have_posts()): the_post(); 
-            get_template_part('parts', 'archiveposts');
+            get_template_part('parts-archive');
          endwhile;
          ?>
         </div> <!-- cards -->
@@ -46,7 +46,7 @@
         少数精鋭のチームで、<br>
         あなたも会社と一緒に成長していきましょう。
       </p>
-      <a href="#" class="visual__entry_button">ENTRY</a>
+      <a href="<?php echo esc_url(home_url('/')); ?>entry/" class="visual__entry_button">ENTRY</>
     </div>
   </section>
 

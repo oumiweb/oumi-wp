@@ -1,7 +1,4 @@
-<div class="cards">
 
-  <?php if (have_posts()) : ?>
-    <?php while (have_posts()) : the_post(); ?>
       <article class="card">
         <a href="<?php the_permalink(); ?>" class="card__link">
           <div class="card__item">
@@ -18,19 +15,18 @@
               if ($cats) :
               ?>
                 <p class="card__category">
-                  <?php foreach ($cats as $cat) : echo esc_html($cat->name);
-                  endforeach; ?>
-                </p>
-              <?php endif; ?>
-              <h3 class="card__title"><?php the_title(); ?></h3>
-              <time datetime="<?php the_time('Y-m-d'); ?>" class="card__date"><?php the_time('Y.m.d'); ?></time>
+                  <?php
+                  $cat_names = array_map(function ($cat) {
+                    return esc_html($cat->name);
+                  }, $cats);
+                  echo implode(' ', $cat_names); // 半角スペースで区切る
+                  ?>
+                  </p>
+
+                <?php endif; ?>
+                <h3 class="card__title"><?php the_title(); ?></h3>
+                <time datetime="<?php the_time('Y-m-d'); ?>" class="card__date"><?php the_time('Y.m.d'); ?></time>
             </div>
           </div>
         </a>
       </article>
-    <?php endwhile; ?>
-  <?php else : ?>
-    <p>記事が見つかりませんでした。</p>
-  <?php endif; ?>
-
-</div> <!-- cards -->
