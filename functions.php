@@ -2,8 +2,13 @@
 // 管理画面｜アイキャッチ画像の設定領域を表示
 function theme_setup(){
   add_theme_support('post-thumbnails');
+
+  // 投稿タイプ「post」と「page」に対してアイキャッチを有効化（明示）
+  add_post_type_support('post', 'thumbnail');
+  add_post_type_support('page', 'thumbnail');
 }
 add_action('after_setup_theme', 'theme_setup');
+
 
 function create_staff_post_type() {
   register_post_type('staff',

@@ -28,9 +28,8 @@
   
   <div class="blog-detail__pagination">
     <div class="blog-detail__pagination-prev">
-      <a href="<?php echo esc_url(home_url('/')); ?>./blog-detail2/" class="pagination-link">
+      <a href="./blog-detail2.html" class="pagination-link">
         <div class="pagination-link__text-group">
-          <?php previous_post_link('%link', '前の記事へ'); ?>
           <p class="pagination-link__text">内定者向け研修を行いました。</p>
           <time class="pagination-link__date" datetime="2024-08-25">2024.08.25</time>
         </div>
