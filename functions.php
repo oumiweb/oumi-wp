@@ -51,3 +51,13 @@ function change_object_label(){
 }
 add_action( 'init', 'change_object_label' );
 add_action( 'admin_menu', 'change_menu_label' );
+
+function exclude_specific_breadcrumb_category($trail) {
+  foreach ($trail->breadcrumbs as $key => $crumb) {
+    if (isset($crumb->taxonomy) && $crumb->taxonomy === 'category' && $crumb->name === '社内イベント') {
+      unset($trail->breadcrumbs[$key]);
+    }
+  }
+  return $trail;
+}
+add_filter('bcn_after_fill', 'exclude_specific_breadcrumb_category');

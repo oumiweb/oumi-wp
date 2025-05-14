@@ -996,9 +996,9 @@ body.is-drawerActive .hamburger {
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  /* SVGをマスクとして使用 */
-  mask: url(/img/icon/big-arrow.svg) no-repeat center;
-  -webkit-mask: url(/img/icon/big-arrow.svg) no-repeat center;
+  /* マスクとして使用 */
+  mask: url(./img/icon/big-arrow.png) no-repeat center;
+  -webkit-mask: url(./img/icon/big-arrow.png) no-repeat center;
   background-color: #222222;
   /* 矢印の色を指定 */
 }
@@ -1232,8 +1232,8 @@ body.is-drawerActive .hamburger {
   transform: translate(-50%, -50%);
   width: 4.375rem;
   height: 4.375rem;
-  mask: url(/img/icon/arrow-left-black.svg) no-repeat center;
-  -webkit-mask: url(/img/icon/arrow-left-black.svg) no-repeat center;
+  mask: url(../../img/icon/arrow-left-black.svg) no-repeat center;
+  -webkit-mask: url(../../img/icon/arrow-left-black.svg) no-repeat center;
   background-color: #222222;
 }
 
@@ -1692,7 +1692,7 @@ body.is-drawerActive .hamburger {
 .card__title {
   font-weight: 700;
   font-size: clamp(0.875rem, 0.787rem + 0.38vw, 1.125rem);
-  margin: 23px 0 30px;
+  margin: 23px 0 10px;
   line-height: 1.5;
   text-decoration: underline solid #222222;
   display: -webkit-box;
@@ -2873,7 +2873,7 @@ span.staff-detail__highlight {
 }
 .blog-detail__meta::before {
   content: "";
-  background: url(/img/icon/books.svg) no-repeat center;
+  background: url(../../img/icon/books.svg) no-repeat center;
   display: inline-block;
   width: 14px;
   height: 14px;
@@ -2961,7 +2961,7 @@ span.staff-detail__highlight {
   display: block;
   width: 24px;
   height: 24px;
-  background: url("../../img/blog/arrow02-left.png") no-repeat center/contain;
+  background: url("./img/blog/arrow02-left.png") no-repeat center/contain;
 }
 .blog-detail__pagination-prev .pagination-link:hover {
   opacity: 0.5;
@@ -2994,7 +2994,7 @@ span.staff-detail__highlight {
   display: block;
   width: 24px;
   height: 24px;
-  background: url("../../img/blog/arrow02-right.png") no-repeat center/contain;
+  background: url("./img/blog/arrow02-right.png") no-repeat center/contain;
 }
 .blog-detail__pagination-next .pagination-link:hover {
   opacity: 0.5;

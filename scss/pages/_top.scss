@@ -395,9 +395,9 @@
     width: 20px;
     height: 20px;
 
-    /* SVGをマスクとして使用 */
-    mask: url(/img/icon/big-arrow.svg) no-repeat center;
-    -webkit-mask: url(/img/icon/big-arrow.svg) no-repeat center;
+    /* マスクとして使用 */
+    mask: url(./img/icon/big-arrow.png) no-repeat center;
+    -webkit-mask: url(./img/icon/big-arrow.png) no-repeat center;
     background-color: $black;
     /* 矢印の色を指定 */
   }
@@ -653,8 +653,8 @@
     transform: translate(-50%, -50%);
     width: 4.375rem;
     height: 4.375rem;
-    mask: url(/img/icon/arrow-left-black.svg) no-repeat center;
-    -webkit-mask: url(/img/icon/arrow-left-black.svg) no-repeat center;
+    mask: url(../../img/icon/arrow-left-black.svg) no-repeat center;
+    -webkit-mask: url(../../img/icon/arrow-left-black.svg) no-repeat center;
     background-color: $black;
   }
 }
