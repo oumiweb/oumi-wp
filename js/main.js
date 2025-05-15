@@ -136,7 +136,7 @@ window.addEventListener('DOMContentLoaded', function () {
         $('input[name="checkbox-xxx[]"]:checked').length > 0 &&
         $('input[name="birth_year"]').val() !== '' &&
         $('select[name="month"]').eq(0).val() !== '' &&
-        $('select[name="day"]').eq(1).val() !== '' &&
+        $('select[name="birth_day"]').eq(1).val() !== '' &&
         $('#privacyCheck').is(':checked');
 
       $submitBtn.prop('disabled', !isValid);

@@ -3523,7 +3523,7 @@ span.staff-detail__highlight {
 }
 
 @media screen and (max-width: 767px) {
-  .day {
+  .birth_day {
     display: block;
   }
 }

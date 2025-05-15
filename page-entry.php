@@ -87,8 +87,8 @@
               <span>月</span>
             </div>
             <!-- 日（プルダウン） -->
-            <div class="Form-Item day">
-              <select class="select-box" name="day" id="day">
+            <div class="Form-Item birth_day">
+              <select class="select-box" name="birth_day" id="birth_day">
                 <option value="">選択してください</option>
                 <option value="1">1日</option>
                 <option value="2">2日</option>
@@ -169,31 +169,31 @@
               <span class="wpcf7-form-control wpcf7-checkbox">
                 <span class="wpcf7-list-item first">
                   <label>
-                    <input type="checkbox" name="checkbox-xxx[]" value="X(旧Twitter)">
+                    <input type="checkbox" name="checkbox-xxx" value="X(旧Twitter)">
                     <span class="wpcf7-list-item-label">X(旧Twitter)</span>
                   </label>
                 </span>
                 <span class="wpcf7-list-item">
                   <label>
-                    <input type="checkbox" name="checkbox-xxx[]" value="Facebook">
+                    <input type="checkbox" name="checkbox-xxx" value="Facebook">
                     <span class="wpcf7-list-item-label">Facebook</span>
                   </label>
                 </span>
                 <span class="wpcf7-list-item">
                   <label>
-                    <input type="checkbox" name="checkbox-xxx[]" value="検索広告">
+                    <input type="checkbox" name="checkbox-xxx" value="検索広告">
                     <span class="wpcf7-list-item-label">検索広告</span>
                   </label>
                 </span>
                 <span class="wpcf7-list-item">
                   <label>
-                    <input type="checkbox" name="checkbox-xxx[]" value="知人友人・親戚">
+                    <input type="checkbox" name="checkbox-xxx" value="知人友人・親戚">
                     <span class="wpcf7-list-item-label">知人友人・親戚</span>
                   </label>
                 </span>
                 <span class="wpcf7-list-item last">
                   <label>
-                    <input type="checkbox" name="checkbox-xxx[]" value="その他">
+                    <input type="checkbox" name="checkbox-xxx" value="その他">
                     <span class="wpcf7-list-item-label">その他</span>
                   </label>
                 </span>
