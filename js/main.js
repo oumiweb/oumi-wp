@@ -127,16 +127,16 @@ window.addEventListener('DOMContentLoaded', function () {
 
     $('#form input, #form textarea, #form select').on('change keyup', function () {
       const isValid =
-        $('#your_name').val() !== '' &&
-        $('#your_name_kana').val() !== '' &&
+        $('#name').val() !== '' &&
+        $('#name_kana').val() !== '' &&
         $('#mail').val() !== '' &&
         $('#tel').val() !== '' &&
         $('input[name="radio-xxx"]:checked').val() !== undefined &&
         $('textarea[name="textarea-xxx"]').val() !== '' &&
-        $('input[name="checkbox-xxx[]"]:checked').length > 0 &&
+        $('input[name="checkbox-xxx"]:checked').length > 0 &&
         $('input[name="birth_year"]').val() !== '' &&
         $('select[name="month"]').eq(0).val() !== '' &&
-        $('select[name="birth_day"]').eq(1).val() !== '' &&
+        $('select[name="birth_day"]').eq(0).val() !== '' &&
         $('#privacyCheck').is(':checked');
 
       $submitBtn.prop('disabled', !isValid);
