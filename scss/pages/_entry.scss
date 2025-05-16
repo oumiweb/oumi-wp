@@ -1,6 +1,6 @@
 @use "../base/setting" as *;
 
-.page-entry {
+.margin {
   margin-top: 118px; /* ← ヘッダーと同じ高さを確保 */
 }
 
@@ -108,17 +108,13 @@
   color: #AFA86F;
 }
 
-.wpcf7-form-control-wrap {
-  width: 65%;
-
-  @include mq("md") {
-    width: 100%;
-  }
+.Form-Item .wpcf7-form-control-wrap {
+ width: 100%;
 }
 
 .wpcf7-form-control {
   padding: 20px;
-  width: 100%;
+  width: 90%;
   background-color: #FAF7F1;
   border-radius: 10px;
   border: 1px solid #AFA86F;
@@ -254,6 +250,7 @@ input[type="radio"]:checked::before {
 .wpcf7-list-item {
   display: flex;
   align-items: center;
+  margin: 0;
 
   &:not(:first-of-type) {
     margin-top: 15px;

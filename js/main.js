@@ -122,31 +122,26 @@ window.addEventListener('DOMContentLoaded', function () {
       $(this).toggleClass('is-active');
     });
 
-    // コンタクトフォームのバリデーション
     const $submitBtn = $('#js-submit');
 
     $('#form input, #form textarea, #form select').on('change keyup', function () {
       const isValid =
-        $('#name').val() !== '' &&
-        $('#name_kana').val() !== '' &&
-        $('#mail').val() !== '' &&
-        $('#tel').val() !== '' &&
-        $('input[name="radio-xxx"]:checked').val() !== undefined &&
-        $('textarea[name="textarea-xxx"]').val() !== '' &&
+        $('#name').val().trim() !== '' &&
+        $('#name_kana').val().trim() !== '' &&
+        $('#mail').val().trim() !== '' &&
+        $('#tel').val().trim() !== '' &&
+        $('input[name="radio-xxx"]:checked').length > 0 &&
+        $('textarea[name="textarea-xxx"]').val().trim() !== '' &&
         $('input[name="checkbox-xxx"]:checked').length > 0 &&
-        $('input[name="birth_year"]').val() !== '' &&
-        $('select[name="month"]').eq(0).val() !== '' &&
-        $('select[name="birth_day"]').eq(0).val() !== '' &&
+        $('#birth_year').val().trim() !== '' &&
+        $('#month').val() !== '' &&
+        $('#birth_day').val() !== '' &&
         $('#privacyCheck').is(':checked');
-
+  
       $submitBtn.prop('disabled', !isValid);
     });
-
-    $submitBtn.on('click', function (e) {
-      e.preventDefault();
-      window.location.href = "./thanks.html";
-    });
   });
+    
 
   // スワイパー（SwiperインスタンスはjQueryと分ける）
   new Swiper(".top-member__swiper", {
