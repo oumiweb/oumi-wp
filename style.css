@@ -3446,6 +3446,14 @@ span.staff-detail__highlight {
   flex: 1;
 }
 
+.year {
+  display: flex;
+}
+.year p:nth-child(2) {
+  display: flex;
+  align-items: center;
+}
+
 .Form-Item-Label-Required {
   color: #AFA86F;
 }
