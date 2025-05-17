@@ -3432,6 +3432,7 @@ span.staff-detail__highlight {
 }
 
 .Form-Item-Label {
+  display: flex;
   margin-left: 71px;
   width: 163px;
 }
@@ -3441,17 +3442,17 @@ span.staff-detail__highlight {
   }
 }
 
+.Form-Item-Input {
+  flex: 1;
+}
+
 .Form-Item-Label-Required {
   color: #AFA86F;
 }
 
-.Form-Item .wpcf7-form-control-wrap {
-  width: 100%;
-}
-
 .wpcf7-form-control {
+  width: 93%;
   padding: 20px;
-  width: 90%;
   background-color: #FAF7F1;
   border-radius: 10px;
   border: 1px solid #AFA86F;

@@ -84,7 +84,6 @@
   align-items: center;
   width: 100%;
   margin-top: 27px;
-
   @include mq("md") {
  flex-direction: column;
  align-items: flex-start;   
@@ -96,6 +95,7 @@
 }
 
 .Form-Item-Label {
+  display: flex;
   margin-left: 71px;
   width: 163px;
 
@@ -104,17 +104,18 @@
   }
 }
 
+.Form-Item-Input {
+  flex: 1;
+}
+
 .Form-Item-Label-Required {
   color: #AFA86F;
 }
 
-.Form-Item .wpcf7-form-control-wrap {
- width: 100%;
-}
 
 .wpcf7-form-control {
+  width: 93%;
   padding: 20px;
-  width: 90%;
   background-color: #FAF7F1;
   border-radius: 10px;
   border: 1px solid #AFA86F;
