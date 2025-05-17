@@ -3474,7 +3474,7 @@ span.staff-detail__highlight {
 .form__birth-selects {
   display: flex;
   position: relative;
-  gap: 17px;
+  gap: 25px;
 }
 @media screen and (max-width: 550px) {
   .form__birth-selects {
@@ -3482,7 +3482,7 @@ span.staff-detail__highlight {
   }
 }
 .form__birth-selects span {
-  margin-left: 10px;
+  width: 100%;
 }
 .form__birth-selects .Form-Item {
   position: relative;
@@ -3491,9 +3491,9 @@ span.staff-detail__highlight {
 .form__birth-selects .Form-Item::after {
   content: "";
   position: absolute;
-  width: 6px;
-  height: 6px;
-  top: 45%;
+  width: 9px;
+  height: 9px;
+  top: 40%;
   right: 23%;
   border-top: 1px solid #222222;
   border-right: 1px solid #222222;
@@ -3518,7 +3518,7 @@ span.staff-detail__highlight {
 }
 .month {
   margin-left: 234px;
-  display: block;
+  display: flex;
 }
 @media screen and (max-width: 767px) {
   .month {
@@ -3526,11 +3526,15 @@ span.staff-detail__highlight {
   }
 }
 
-@media screen and (max-width: 767px) {
-  .birth_day {
-    display: block;
-  }
+.birth__label {
+  font-size: 12px;
+  width: 178px;
+  display: flex;
 }
+.birth__label .wpcf7-validates-as-required {
+  padding: 22px;
+}
+
 /* Style for the select box */
 .select-box {
   padding: 22px 52px 22px 20px;
@@ -3588,6 +3592,7 @@ input[type=radio]:checked::before {
   display: flex;
   flex-direction: column;
   padding: 0;
+  width: 100%;
 }
 
 .wpcf7-list-item {
@@ -3614,6 +3619,7 @@ input[type=radio]:checked::before {
 .wpcf7-form-control.wpcf7-checkbox {
   background-color: #ffffff;
   border: none;
+  width: 100%;
 }
 
 .Form-Item.textarea {
@@ -3624,9 +3630,16 @@ input[type=radio]:checked::before {
   margin-top: 16px;
 }
 
+.wpcf7-textarea {
+  height: 240px;
+}
+
 .Form-Item.checkbox {
   display: flex;
   align-items: flex-start;
+}
+.Form-Item.checkbox .Form-Item-Label {
+  width: 128px;
 }
 
 .wpcf7-checkbox {
@@ -3665,6 +3678,10 @@ input[type=checkbox]:checked::after {
   display: block;
 }
 
+.textarea-xxx {
+  flex: 1;
+}
+
 .button-wrap {
   display: flex;
   flex-direction: column;
@@ -3676,10 +3693,6 @@ input[type=checkbox]:checked::after {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.wpcf7-list-item-label {
-  font-size: 14px;
 }
 
 .button-wrap input[type=checkbox] {

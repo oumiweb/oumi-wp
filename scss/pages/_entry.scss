@@ -110,7 +110,6 @@
   .year {
     display: flex;
   
-
   p:nth-child(2) {
     display: flex;
     align-items: center;
@@ -138,7 +137,7 @@
 .form__birth-selects {
   display: flex;
   position: relative;
-  gap: 17px;
+  gap: 25px;
 
   @include mq("sm") {
     display: block;
@@ -146,7 +145,7 @@
 
 
   span {
-    margin-left: 10px;
+    width: 100%;
   }
 
   .Form-Item {
@@ -156,9 +155,9 @@
     &::after {
       content: "";
       position: absolute;
-      width: 6px;
-      height: 6px;
-      top: 45%;
+      width: 9px;
+      height: 9px;
+      top: 40%;
       right: 23%;
       border-top: 1px solid $black;
       border-right: 1px solid $black;
@@ -184,16 +183,21 @@
 
 .month {
   margin-left: 234px;
-  display: block;
+  display: flex;
 
   @include mq("md") {
     margin-left: 0;
   }
 }
-@include mq("md") {
-.birth_day {
-  display: block;
- }
+
+.birth__label {
+  font-size: 12px;
+  width: 178px;
+  display: flex;
+
+.wpcf7-validates-as-required {
+  padding: 22px;
+}
 }
 
 /* Style for the select box */
@@ -255,6 +259,7 @@ input[type="radio"]:checked::before {
   display: flex;
   flex-direction: column;
   padding: 0;
+  width: 100%;
 }
 
 .wpcf7-list-item {
@@ -283,6 +288,7 @@ input[type="radio"]:checked::before {
 .wpcf7-form-control.wpcf7-checkbox {
   background-color: $white;
   border: none;
+  width: 100%;
 }
 
 .Form-Item.textarea {
@@ -294,9 +300,17 @@ input[type="radio"]:checked::before {
   }
 }
 
+.wpcf7-textarea {
+  height: 240px;
+}
+
 .Form-Item.checkbox {
   display: flex;
   align-items: flex-start;
+
+  .Form-Item-Label {
+    width: 128px;
+  }
 }
 
 
@@ -342,6 +356,10 @@ input[type="checkbox"] {
   }
 }
 
+.textarea-xxx {
+  flex: 1;
+}
+
 .button-wrap {
   display: flex;
   flex-direction: column;
@@ -357,12 +375,7 @@ input[type="checkbox"] {
 }
 
 
-.wpcf7-list-item-label {
-  font-size: 14px;
-}
-
 .button-wrap {
-
   input[type="checkbox"] {
     appearance: none;
     width: 16px;
