@@ -406,6 +406,16 @@ input[type="checkbox"] {
   }
 }
 
+.button-wrap .wpcf7-form-control-wrap {
+  .wpcf7-form-control {
+    padding: 0;
+    background-color: none;
+    border-radius: none;
+    border: none;
+   }
+}
+
+
 .wpcf7-submit {
   padding: 20px 96px;
   width: auto;

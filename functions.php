@@ -67,3 +67,12 @@ add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
 function wpcf7_autop_return_false() {
   return false;
 } 
+function add_body_class_slug( $classes ) {
+  if ( is_front_page() ) {
+    $classes[] = 'top-page';
+  } else {
+    $classes[] = 'sub-page';
+  }
+  return $classes;
+}
+add_filter( 'body_class', 'add_body_class_slug' );

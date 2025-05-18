@@ -24,29 +24,52 @@
 
 <body class="top-page">
   <header class="header">
-    <div class="header--white">
-      <h1>
-        <a href="<?php echo esc_url(home_url('/')); ?>"><img class="header__logo-img header__logo-img--white"
-            src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo/tetote-logo-white.png"
-            alt="株式会社TETOTE | テクノロジーで社会課題を解決する"></a>
+    <?php if (is_front_page()) : ?>
+      <div class="header--white">
+        <!-- トップページ用ロゴ・ナビ -->
+        <h1>
+          <a href="<?php echo esc_url(home_url('/')); ?>">
+            <img class="header__logo-img header__logo-img--white"
+              src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo/tetote-logo-white.png"
+              alt="株式会社TETOTE | テクノロジーで社会課題を解決する">
+          </a>
+        </h1>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item"><a href="<?php echo esc_url(home_url('/details/')); ?>" class="recruitment_btn">募集要項</a></li>
+            <li class="header__nav-item"><a href="<?php echo esc_url(home_url('/entry/')); ?>" class="entry_btn">ENTRY</a></li>
+          </ul>
+        </nav>
+        <button type="button" class="button hamburger js-hamburger" aria-controls="js-global-menu"
+          aria-expanded="false" aria-label="メニューを開閉する">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__label">MENU</span>
+        </button>
+      </div>
+    <?php else : ?>
+      <div class="header--black">
+        <!-- 下層ページ用ロゴ・ナビ -->
+        <h1>
+          <a href="<?php echo esc_url(home_url('/')); ?>">
+            <img class="header__logo-img header__logo-img--black"
+              src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo/tetote-logo-black.png"
+              alt="株式会社TETOTE | テクノロジーで社会課題を解決する">
+          </a>
+        </h1>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item"><a href="<?php echo esc_url(home_url('/details/')); ?>" class="recruitment_btn">募集要項</a></li>
+            <li class="header__nav-item"><a href="<?php echo esc_url(home_url('/entry/')); ?>" class="entry_btn">ENTRY</a></li>
+          </ul>
+        </nav>
+        <button type="button" class="button hamburger js-hamburger" aria-controls="js-global-menu"
+          aria-expanded="false" aria-label="メニューを開閉する">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__label">MENU</span>
+        </button>
+      </div>
+    <?php endif; ?>
 
-      </h1>
-      <nav class="header__nav">
-        <ul class="header__nav-list">
-          <li class="header__nav-item"><a href="<?php echo esc_url(home_url('/')); ?>details/" class="recruitment_btn">募集要項</a></li>
-          <li class="header__nav-item">
-            <a href="<?php echo esc_url(home_url('/')); ?>entry/" class="entry_btn">
-              ENTRY
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <button type="button" class="button hamburger js-hamburger" aria-controls="js-glabal-menu"
-        aria-expanded="false" aria-label="メニューを開閉する">
-        <span class="hamburger__line"></span>
-        <span class="hamburger__label">MENU</span>
-      </button>
-    </div>
     <div class="header--black">
       <h1><a href="<?php echo esc_url(home_url('/')); ?>"><img class="header__logo-img header__logo-img--black"
             src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo/tetote-logo-black.png" alt="株式会社TETOTE | テクノロジーで社会課題を解決する"></a>
@@ -74,6 +97,11 @@
             <li class="header__nav-item"><a href="<?php echo esc_url(home_url('/')); ?>entry/" class="entry_btn">ENTRY</a></li>
           </ul>
         </nav>
+        <button type="button" class="button hamburger js-hamburger" aria-controls="js-global-menu"
+          aria-expanded="false" aria-label="メニューを開閉する">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__label">MENU</span>
+        </button>
       </header>
       <section class="recruit-links">
         <div class="recruit-links__inner">

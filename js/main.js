@@ -27,43 +27,47 @@ window.addEventListener('DOMContentLoaded', function () {
   $(function () {
     $('.js-hamburger').click(toggleHamburgerMenu);
     $('#js-global-menu a').click(toggleHamburgerMenu);
-  
+
     function toggleHamburgerMenu() {
       const isExpanded = $('.js-hamburger').attr('aria-expanded') === 'true';
       const $globalMenu = $('#js-global-menu');
       const $headerSp = $('.header--sp');
       const $headerBlack = $('.header--black');
       const $headerWhite = $('.header--white');
-  
+
       $('body').toggleClass('is-drawerActive');
-  
+
       if (!isExpanded) {
         // ▼ 開くとき
         $('.js-hamburger').attr('aria-expanded', true);
         $globalMenu.addClass('is-visible').attr('aria-hidden', 'false');
-  
+
         // ▼ header--black を非表示に
         $headerBlack.removeClass('is_active').addClass('is-hidden');
         $headerSp.addClass('is-visible');
-  
+
       } else {
         // ▼ 閉じるとき
         $('.js-hamburger').attr('aria-expanded', false);
         $globalMenu.removeClass('is-visible').attr('aria-hidden', 'true');
         $headerSp.removeClass('is-visible');
-  
+
         // ▼ header--black を復活
         $headerBlack.removeClass('is-hidden');
-  
-        const isTop = $('.fv').length && $(window).scrollTop() < $('.fv').outerHeight();
-        if (isTop) {
-          $headerWhite.addClass('is-visible');
+
+        if ($('body').hasClass('top-page')) {
+          const isTop = $('.fv').length && $(window).scrollTop() < $('.fv').outerHeight();
+          if (isTop) {
+            $headerWhite.addClass('is-visible');
+          } else {
+            $headerBlack.addClass('is_active');
+          }
         } else {
+          // 下層ページは常に header--black を表示
           $headerBlack.addClass('is_active');
         }
       }
     }
-  
 
     // スムーススクロール（リンククリック）
     const headerHeight = $('.header').outerHeight();
@@ -137,11 +141,11 @@ window.addEventListener('DOMContentLoaded', function () {
         $('#month').val() !== '' &&
         $('#birth_day').val() !== '' &&
         $('#privacyCheck').is(':checked');
-  
+
       $submitBtn.prop('disabled', !isValid);
     });
   });
-    
+
 
   // スワイパー（SwiperインスタンスはjQueryと分ける）
   new Swiper(".top-member__swiper", {
