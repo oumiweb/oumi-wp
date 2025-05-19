@@ -25,7 +25,7 @@
           弊社では、コンサルタントのキャリアパスを、大きく4つのステージに分けています。
         </p>
         <div class="career__img">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/career/tetote-carrer-path 1.svg" alt="TETOTEでのキャリアパスの図解">
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/career/tetote-carrer-path.jpg" alt="TETOTEでのキャリアパスの図解">
         </div>
         <p class="career__text">
           TETOTE は、コンサルタントのキャリアパスを支えるために、以下の独自の研修制度を設けています。
