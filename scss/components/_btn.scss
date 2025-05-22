@@ -1,6 +1,6 @@
 @use '../base/setting' as *;
 
-@mixin viewmore-btn($text-color: #222222, $hover-bg-color: #222222, $padding: 10px 30px,$icon-url: '/img/icon/big-arrow.svg') {
+@mixin viewmore-btn($text-color: #222222, $hover-bg-color: #222222, $padding: 10px 30px) {
   font-size: 1.25rem;
   font-family: 'Viga', sans-serif;
   color: $text-color; /* 通常時の文字色 */
@@ -17,20 +17,11 @@
     transform: translateY(-50%);
     width: 20px;
     height: 20px;
-
-    /* SVGをマスクとして使用 */
-    mask: url(#{$icon-url}) no-repeat center;
-    -webkit-mask: url(#{$icon-url}) no-repeat center;
-    background-color: $text-color; /* 矢印の色を文字色と統一 */
   }
 
   &:hover {
     background-color: $hover-bg-color; /* ホバー時の背景色 */
     color: #fff; /* ホバー時の文字色を固定（白） */
-
-    &::after {
-      background-color: #fff; /* ホバー時の矢印の色を白に */
-    }
   }
 }
 

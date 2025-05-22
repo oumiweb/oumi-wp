@@ -75,4 +75,35 @@ function add_body_class_slug( $classes ) {
   }
   return $classes;
 }
-add_filter( 'body_class', 'add_body_class_slug' );
+function theme_enqueue_scripts() {
+  // jQuery（WordPress同梱のバージョンを使う）
+  wp_enqueue_script('jquery');
+
+  // Swiper
+  wp_enqueue_script(
+    'swiper',
+    'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+    array(),
+    '11.0.0',
+    true
+  );
+
+  // Slick（必要なら）
+  wp_enqueue_script(
+    'slick-carousel',
+    'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js',
+    array('jquery'),
+    '1.8.1',
+    true
+  );
+
+  // main.js（jQuery に依存させる）
+  wp_enqueue_script(
+    'main-js',
+    get_stylesheet_directory_uri() . '/js/main.js',
+    array('jquery', 'swiper', 'slick-carousel'),
+    '1.0.0',
+    true
+  );
+}
+add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');

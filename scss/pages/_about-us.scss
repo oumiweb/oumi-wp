@@ -63,6 +63,10 @@
   @include mq("lg") {
     font-size: 36px;
  }
+
+ @media screen and (min-width: 1800px) {
+  font-size: 8rem;
+}
 }
 .mv__title,
 .mv__sub-title,
@@ -75,10 +79,15 @@
 .mv__lead {
   font-weight: $bold;
   font-size: 24px;
+  
 
   @include mq("lg") {
     font-size: 16px;
  }
+
+ @media screen and (min-width: 1800px){
+  font-size: 2.5rem;
+}
 }
 
 .mv__sub-title {

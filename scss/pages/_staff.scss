@@ -18,7 +18,8 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
   gap: 47px 43px; /* カード同士の隙間 */
 
-  @include mq("md") {
+  @include mq("lg") {
+    align-items: center;
     justify-items: center;
   }
 }

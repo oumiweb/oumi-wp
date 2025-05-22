@@ -462,7 +462,7 @@ body.is-drawerActive .hamburger {
     margin-top: 13px;
   }
 }
-@media screen and (min-width: 1950px) {
+@media screen and (min-width: 1500px) and (max-width: 2500px) {
   .entry_btn.entry_btn--large {
     margin-left: 35px;
   }
@@ -1816,17 +1816,10 @@ body.is-drawerActive .hamburger {
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  /* SVGをマスクとして使用 */
-  mask: url(/img/icon/big-arrow.svg) no-repeat center;
-  -webkit-mask: url(/img/icon/big-arrow.svg) no-repeat center;
-  background-color: #222222; /* 矢印の色を文字色と統一 */
 }
 .info-links__item:hover {
   background-color: #222222; /* ホバー時の背景色 */
   color: #fff; /* ホバー時の文字色を固定（白） */
-}
-.info-links__item:hover::after {
-  background-color: #fff; /* ホバー時の矢印の色を白に */
 }
 .info-links__item::after {
   right: 20px;
@@ -1971,26 +1964,22 @@ body.is-drawerActive .hamburger {
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  /* SVGをマスクとして使用 */
-  mask: url(/img/icon/big-arrow.svg) no-repeat center;
-  -webkit-mask: url(/img/icon/big-arrow.svg) no-repeat center;
-  background-color: #222222; /* 矢印の色を文字色と統一 */
 }
 .visual__entry_button:hover {
   background-color: #222222; /* ホバー時の背景色 */
   color: #fff; /* ホバー時の文字色を固定（白） */
 }
-.visual__entry_button:hover::after {
-  background-color: #fff; /* ホバー時の矢印の色を白に */
-}
 .visual__entry_button::after {
+  mask: url(img/icon/arrow16.png) no-repeat center;
+  -webkit-mask: url(img/icon/arrow16.png) no-repeat center;
+  background-color: #222222;
   right: 20px;
+}
+.visual__entry_button:hover::after {
+  background-color: #ffffff;
 }
 
 @media screen and (max-width: 767px) {
-  .visual__entry_button::after {
-    mask: url(/img/icon/arrow16px.svg) no-repeat center;
-  }
   .visual__entry-box {
     padding: 24px 24px 29px 24px;
   }
@@ -2190,6 +2179,11 @@ body.is-drawerActive .hamburger {
     font-size: 36px;
   }
 }
+@media screen and (min-width: 1800px) {
+  .mv__title {
+    font-size: 8rem;
+  }
+}
 
 .mv__title,
 .mv__sub-title,
@@ -2207,6 +2201,12 @@ body.is-drawerActive .hamburger {
   .mv__sub-title,
   .mv__lead {
     font-size: 16px;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .mv__sub-title,
+  .mv__lead {
+    font-size: 2.5rem;
   }
 }
 
@@ -2612,8 +2612,9 @@ body.is-drawerActive .hamburger {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 47px 43px; /* カード同士の隙間 */
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1024px) {
   .staff-content {
+    align-items: center;
     justify-items: center;
   }
 }
@@ -3171,14 +3172,28 @@ span.staff-detail__highlight {
 .details {
   padding: 145px 0 176px 0;
 }
+.details-inner {
+  width: 100%;
+  max-width: 1920px;
+  margin-inline: auto;
+  padding-left: clamp(1rem, -3.71rem + 20.09vw, 14.375rem);
+  padding-right: clamp(1rem, -3.71rem + 20.09vw, 14.375rem);
+}
 
 .buttons {
-  margin-top: 70px;
+  margin-top: 60px;
   display: flex;
   gap: 49px;
+  flex-wrap: wrap;
 }
+@media screen and (max-width: 1024px) {
+  .buttons {
+    justify-content: center;
+  }
+}
+
 .scroll-button {
-  padding: 18px 47px;
+  padding: 18px 30px 18px 57px;
   background-color: #FAF7F1;
   border-radius: 40px;
   font-size: 20px;
@@ -3188,22 +3203,22 @@ span.staff-detail__highlight {
   white-space: nowrap;
   transition: all 0.3s ease;
 }
-@media screen and (max-width: 1024px) {
-  .scroll-button {
-    padding: 15px 30px;
-  }
-}
 .scroll-button:hover {
   opacity: 0.5;
 }
 
-.scroll-button__large {
-  padding: 18px 37px;
+.scroll-button--large {
+  padding-right: 50px;
+  padding-left: 77px;
 }
 
 .details__title {
   margin-top: 97px;
   font-size: 32px;
+}
+
+.details .definition__list {
+  padding-top: 73px;
 }
 
 @media screen and (max-width: 834px) {

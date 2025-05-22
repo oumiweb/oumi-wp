@@ -1,30 +1,36 @@
-// DOMが読み込まれたら実行
-window.addEventListener('DOMContentLoaded', function () {
-  // ▼ 追従ヘッダーの関数
-  const showFixedHeader = () => {
-    const $globalMenu = $('#js-global-menu');
-    const fixedNav = $('.header--black');
+(function($) {
+  $(function() {
 
-    // メニューが開いていたら制御しない
-    if ($globalMenu.attr('aria-hidden') === 'false') return;
+    // ▼ Swiper初期化（jQueryとは独立）
+    new Swiper(".top-member__swiper", {
+      loop: true,
+      slidesPerView: "auto",
+      slidesPerGroup: 1,
+      speed: 800,
+      navigation: {
+        nextEl: ".button-next",
+        prevEl: ".button-prev",
+      },
+    });
 
-    const scrollTop = $(window).scrollTop();
-    const headerHeight = $('.fv').outerHeight();
-    const isHeaderVisible = scrollTop < headerHeight;
+    // ▼ 追従ヘッダーの関数
+    const showFixedHeader = () => {
+      const $globalMenu = $('#js-global-menu');
+      const fixedNav = $('.header--black');
+      if ($globalMenu.attr('aria-hidden') === 'false') return;
 
-    fixedNav.toggleClass('is_active', !isHeaderVisible)
-      .attr('aria-hidden', isHeaderVisible);
-  };
-  // 初回に実行
-  showFixedHeader();
+      const scrollTop = $(window).scrollTop();
+      const headerHeight = $('.fv').outerHeight();
+      const isHeaderVisible = scrollTop < headerHeight;
 
-  // スクロール時に実行
-  $(window).on('scroll', () => {
+      fixedNav.toggleClass('is_active', !isHeaderVisible)
+               .attr('aria-hidden', isHeaderVisible);
+    };
+
     showFixedHeader();
-  });
+    $(window).on('scroll', showFixedHeader);
 
-  // ▼ ハンバーガーメニューの制御
-  $(function () {
+    // ▼ ハンバーガーメニュー
     $('.js-hamburger').click(toggleHamburgerMenu);
     $('#js-global-menu a').click(toggleHamburgerMenu);
 
@@ -38,21 +44,14 @@ window.addEventListener('DOMContentLoaded', function () {
       $('body').toggleClass('is-drawerActive');
 
       if (!isExpanded) {
-        // ▼ 開くとき
         $('.js-hamburger').attr('aria-expanded', true);
         $globalMenu.addClass('is-visible').attr('aria-hidden', 'false');
-
-        // ▼ header--black を非表示に
         $headerBlack.removeClass('is_active').addClass('is-hidden');
         $headerSp.addClass('is-visible');
-
       } else {
-        // ▼ 閉じるとき
         $('.js-hamburger').attr('aria-expanded', false);
         $globalMenu.removeClass('is-visible').attr('aria-hidden', 'true');
         $headerSp.removeClass('is-visible');
-
-        // ▼ header--black を復活
         $headerBlack.removeClass('is-hidden');
 
         if ($('body').hasClass('top-page')) {
@@ -63,14 +62,14 @@ window.addEventListener('DOMContentLoaded', function () {
             $headerBlack.addClass('is_active');
           }
         } else {
-          // 下層ページは常に header--black を表示
           $headerBlack.addClass('is_active');
         }
       }
     }
 
-    // スムーススクロール（リンククリック）
+    // ▼ スムーススクロール
     const headerHeight = $('.header').outerHeight();
+
     $('a[href^="#"]').click(function () {
       const href = $(this).attr("href");
       const target = $(href === "#" || href === "" ? 'html' : href);
@@ -81,7 +80,7 @@ window.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // スムーススクロール（ハッシュありで読み込み時）
+    // ハッシュ付きで読み込まれたときも
     const urlHash = location.hash;
     if (urlHash) {
       const target = $(urlHash);
@@ -90,18 +89,18 @@ window.addEventListener('DOMContentLoaded', function () {
         $("html, body").animate({ scrollTop: position }, 300, "swing");
       }
     }
-    // 目次
+
+    // ▼ 目次ハイライト
     const tocLinks = document.querySelectorAll('.toc-link');
     const sections = Array.from(tocLinks).map(link => {
       const id = link.getAttribute('href').replace('#', '');
       return document.getElementById(id);
     });
 
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('.header--black'); // 追従しているヘッダーの要素
+    $(window).on('scroll', function () {
+      const header = document.querySelector('.header--black');
       const headerHeight = header ? header.offsetHeight : 0;
-
-      const scrollY = window.scrollY + headerHeight + 80; // ヘッダーの高さと80pxずらす
+      const scrollY = window.scrollY + headerHeight + 80;
 
       let currentIndex = -1;
       sections.forEach((section, index) => {
@@ -111,23 +110,34 @@ window.addEventListener('DOMContentLoaded', function () {
       });
 
       tocLinks.forEach((link, index) => {
-        if (index === currentIndex) {
-          link.classList.add('is-active');
-        } else {
-          link.classList.remove('is-active');
-        }
+        link.classList.toggle('is-active', index === currentIndex);
+      });
+
+      // ▼ スクロール時のアニメーション表示
+      const scrollTop = $(window).scrollTop();
+      const windowHeight = $(window).height();
+
+      $('.top-about__text').each(function () {
+        const offsetTop = $(this).offset().top;
+        const inView = scrollTop > offsetTop - windowHeight + 100 && scrollTop < offsetTop + $(this).outerHeight();
+        $(this).toggleClass('active', inView);
+      });
+
+      $('.title-box').each(function () {
+        const offsetTop = $(this).offset().top;
+        const inView = scrollTop > offsetTop - windowHeight + 100 && scrollTop < offsetTop + $(this).outerHeight();
+        $(this).toggleClass('is-visible', inView);
       });
     });
 
-
-    // アコーディオン
+    // ▼ アコーディオン
     $('.jsAccordionQuestion').on('click', function () {
       $(this).next().toggleClass('is-open');
       $(this).toggleClass('is-active');
     });
 
+    // ▼ フォームバリデーション
     const $submitBtn = $('#js-submit');
-
     $('#form input, #form textarea, #form select').on('change keyup', function () {
       const isValid =
         $('#name').val().trim() !== '' &&
@@ -144,52 +154,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
       $submitBtn.prop('disabled', !isValid);
     });
+
   });
-
-
-  // スワイパー（SwiperインスタンスはjQueryと分ける）
-  new Swiper(".top-member__swiper", {
-    loop: true,
-    slidesPerView: "auto",
-    slidesPerGroup: 1,
-    speed: 800,
-    navigation: {
-      nextEl: ".button-next",
-      prevEl: ".button-prev",
-    },
-  });
-});
-
-
-// トップページアニメーション
-$(window).on('scroll', function () {
-  const scrollTop = $(window).scrollTop();
-  const windowHeight = $(window).height();
-
-  // top-about__text にアニメーションを適用
-  $('.top-about__text').each(function () {
-    const offsetTop = $(this).offset().top;
-
-    if (scrollTop > offsetTop - windowHeight + 100 && scrollTop < offsetTop + $(this).outerHeight()) {
-      $(this).addClass('active');
-    } else {
-      $(this).removeClass('active');
-    }
-  });
-
-  // title-box にアニメーションを適用
-  $('.title-box').each(function () {
-    const offsetTop = $(this).offset().top;
-
-    if (scrollTop > offsetTop - windowHeight + 100 && scrollTop < offsetTop + $(this).outerHeight()) {
-      $(this).addClass('is-visible');
-    } else {
-      $(this).removeClass('is-visible');
-    }
-  });
-});
-
-
-
-
-
+})(jQuery);

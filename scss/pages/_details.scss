@@ -2,21 +2,29 @@
 
 .details {
   padding: 145px 0 176px 0;
+
+  &-inner {
+   width: 100%;
+   max-width: 1920px;
+   margin-inline: auto;
+   padding-left: clamp(1rem, -3.71rem + 20.09vw, 14.375rem);
+   padding-right: clamp(1rem, -3.71rem + 20.09vw, 14.375rem);
+  }
 }
 
 .buttons {
-  margin-top: 70px;
+  margin-top: 60px;
   display: flex;
   gap: 49px;
+  flex-wrap: wrap;
 
   @include mq("lg") {
-   
+    justify-content: center;
   }
-  
 }
 
 .scroll-button {
-  padding: 18px 47px;
+  padding: 18px 30px 18px 57px;
   background-color: #FAF7F1;
  border-radius: 40px;
  font-size: 20px;
@@ -26,23 +34,25 @@
   white-space: nowrap;
   transition: all 0.3s ease;
 
-  @include mq("lg") {
-   padding: 15px 30px;
-  }
-
   &:hover {
     opacity: 0.5;
   }
  }
 
- .scroll-button {
-  &__large {
-    padding: 18px 37px;
+ .scroll-button--large {
+    padding-right: 50px;
+    padding-left: 77px;
   }
- }
+ 
 
  .details__title {
   margin-top: 97px;
   font-size: 32px;
+ }
+
+ .details {
+  .definition__list {
+    padding-top: 73px;
+  }
  }
 

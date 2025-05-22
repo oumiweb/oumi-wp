@@ -60,16 +60,18 @@
   margin-top: 31px;
 
   &::after {
+    mask: url(img/icon/arrow16.png) no-repeat center;
+    -webkit-mask: url(img/icon/arrow16.png) no-repeat center;
+    background-color: #222222;
     right: 20px;
+  }
+
+  &:hover::after {
+    background-color: $white;
   }
 }
 
 @include mq("md") {
-
-  .visual__entry_button::after {
-    mask: url(/img/icon/arrow16px.svg) no-repeat center;
-  }
-
   .visual__entry-box {
     padding: 24px  24px 29px 24px;
    }
