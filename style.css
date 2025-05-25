@@ -710,11 +710,6 @@ body.is-drawerActive .hamburger {
   line-height: 1.2;
   font-weight: normal;
 }
-@media screen and (min-width: 1800px) {
-  .fv__title {
-    font-size: 11rem;
-  }
-}
 
 .fv__subtitle {
   position: absolute;
@@ -727,12 +722,6 @@ body.is-drawerActive .hamburger {
   font-weight: 700;
   display: inline-block;
   clip-path: polygon(0% 0%, 100% 0%, 94% 100%, 0% 100%);
-}
-@media screen and (min-width: 1800px) {
-  .fv__subtitle {
-    font-size: 4rem;
-    bottom: 15%;
-  }
 }
 
 .fv__wrapper {
@@ -3360,17 +3349,23 @@ span.staff-detail__highlight {
 }
 
 .entry {
+  display: flex;
   padding-block: 33px 57px;
   background-color: #FAF7F1;
   margin-bottom: 139px;
 }
 
 .entry-inner {
+  width: 100%;
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
   padding-left: clamp(16px, (100vw - 880px) / 2, 280px);
   padding-right: clamp(16px, (100vw - 880px) / 2, 280px);
 }
 
 .entry__wrapper {
+  max-width: 880px;
   background-color: #ffffff;
   padding-block: 58px 81px;
   border-radius: 10px;
@@ -3444,8 +3439,8 @@ span.staff-detail__highlight {
   }
 }
 
-.Form {
-  padding-top: 97px;
+.wpcf7-form {
+  margin-top: 97px;
 }
 
 .Form-Item-Label {
@@ -3461,6 +3456,7 @@ span.staff-detail__highlight {
 
 .Form-Item-Input {
   flex: 1;
+  width: 100%;
 }
 
 .year {
@@ -3536,6 +3532,8 @@ span.staff-detail__highlight {
 .month {
   margin-left: 234px;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 @media screen and (max-width: 767px) {
   .month {

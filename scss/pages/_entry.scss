@@ -6,18 +6,23 @@
 
 
 .entry {
+  display: flex;
   padding-block: 33px 57px;
   background-color: #FAF7F1;
   margin-bottom: 139px;
 }
 
 .entry-inner {
+  width: 100%;
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
   padding-left: clamp(16px, calc((100vw - 880px) / 2), 280px);
   padding-right: clamp(16px, calc((100vw - 880px) / 2), 280px);
-
 }
 
 .entry__wrapper {
+  max-width: 880px;
   background-color: $white;
   padding-block: 58px 81px;
   border-radius: 10px;
@@ -84,14 +89,14 @@
   align-items: center;
   width: 100%;
   margin-top: 27px;
+
   @include mq("md") {
  flex-direction: column;
  align-items: flex-start;   
  }
 }
-
-.Form {
-  padding-top: 97px;
+.wpcf7-form {
+  margin-top: 97px;
 }
 
 .Form-Item-Label {
@@ -106,6 +111,7 @@
 
 .Form-Item-Input {
   flex: 1;
+  width: 100%;
 }
   .year {
     display: flex;
@@ -151,7 +157,7 @@
   .Form-Item {
     position: relative;
     width: auto;
-
+  
     &::after {
       content: "";
       position: absolute;
@@ -184,6 +190,8 @@
 .month {
   margin-left: 234px;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   @include mq("md") {
     margin-left: 0;
