@@ -142,7 +142,6 @@
 
 .form__birth-selects {
   display: flex;
-  position: relative;
   gap: 25px;
 
   @include mq("sm") {
@@ -157,6 +156,11 @@
   .Form-Item {
     position: relative;
     width: auto;
+    display: flex;
+
+    @include mq("md") {
+      display: block;
+    }
   
     &::after {
       content: "";
@@ -170,8 +174,13 @@
       transform: rotate(135deg);
       pointer-events: none; // ←クリックの邪魔をしない
 
+      @include mq("md") {
+        top: 50%;
+        right: 15%;
+      }
+
       @include mq("sm") {
-        right: 50%;
+        right: 68%;
       }
     }
   }
@@ -190,7 +199,6 @@
 .month {
   margin-left: 234px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
 
   @include mq("md") {
@@ -222,6 +230,17 @@
   color: $black; 
   
   
+}
+.birth__unit {
+  @include mq("md") {
+  position: absolute;
+  top: 50%;
+  right: -9%;
+}
+
+@include mq("sm") {
+  right: 58.5%;
+ }
 }
 
 .select-box:focus {

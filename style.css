@@ -3486,7 +3486,6 @@ span.staff-detail__highlight {
 
 .form__birth-selects {
   display: flex;
-  position: relative;
   gap: 25px;
 }
 @media screen and (max-width: 550px) {
@@ -3500,6 +3499,12 @@ span.staff-detail__highlight {
 .form__birth-selects .Form-Item {
   position: relative;
   width: auto;
+  display: flex;
+}
+@media screen and (max-width: 767px) {
+  .form__birth-selects .Form-Item {
+    display: block;
+  }
 }
 .form__birth-selects .Form-Item::after {
   content: "";
@@ -3513,9 +3518,15 @@ span.staff-detail__highlight {
   transform: rotate(135deg);
   pointer-events: none;
 }
+@media screen and (max-width: 767px) {
+  .form__birth-selects .Form-Item::after {
+    top: 50%;
+    right: 15%;
+  }
+}
 @media screen and (max-width: 550px) {
   .form__birth-selects .Form-Item::after {
-    right: 50%;
+    right: 68%;
   }
 }
 
@@ -3532,7 +3543,6 @@ span.staff-detail__highlight {
 .month {
   margin-left: 234px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 @media screen and (max-width: 767px) {
@@ -3562,6 +3572,19 @@ span.staff-detail__highlight {
   appearance: none;
   font-size: 12px;
   color: #222222;
+}
+
+@media screen and (max-width: 767px) {
+  .birth__unit {
+    position: absolute;
+    top: 50%;
+    right: -9%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .birth__unit {
+    right: 58.5%;
+  }
 }
 
 .select-box:focus {
