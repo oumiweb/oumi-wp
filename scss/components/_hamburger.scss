@@ -132,7 +132,7 @@ body.is-drawerActive .hamburger {
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: hidden;
+  overflow-y: auto;
   height: 100vh;
   background-color: $background-color;
   color: $black;
@@ -169,6 +169,10 @@ body.is-drawerActive .hamburger {
   font-size: 10px;
   top: 30px;
   left: 12px;
+ }
+
+ .sp-global-menu {
+  padding-bottom: 192px;
  }
 }
 

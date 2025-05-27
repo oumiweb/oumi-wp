@@ -257,7 +257,7 @@ body.is-drawerActive .hamburger {
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: hidden;
+  overflow-y: auto;
   height: 100vh;
   background-color: #FAF7F1;
   color: #222222;
@@ -291,6 +291,9 @@ body.is-drawerActive .hamburger {
     font-size: 10px;
     top: 30px;
     left: 12px;
+  }
+  .sp-global-menu {
+    padding-bottom: 192px;
   }
 }
 .recruit-links {
@@ -865,7 +868,7 @@ body.is-drawerActive .hamburger {
 }
 @media screen and (max-width: 550px) {
   .fv__subtitle {
-    bottom: 12%;
+    bottom: 11%;
   }
 }
 .top-about {
@@ -1785,7 +1788,7 @@ body.is-drawerActive .hamburger {
   color: #222222; /* 通常時の文字色 */
   border: 1px solid #222222;
   transition: all 0.3s;
-  padding: 50px 195px;
+  padding: 50px 1rem;
   position: relative;
   font-size: 20px;
   font-weight: 700;
@@ -1794,7 +1797,7 @@ body.is-drawerActive .hamburger {
   border: none;
   white-space: nowrap;
   text-align: center;
-  flex: 1;
+  flex: 1 1 calc(50% - 16px);
 }
 .info-links__item::after {
   content: "";
@@ -1814,10 +1817,6 @@ body.is-drawerActive .hamburger {
   right: 20px;
 }
 
-.info-links__item:nth-child(2) {
-  padding-inline: 175px;
-}
-
 .info-links__bottom {
   display: flex;
   justify-content: center;
@@ -1833,14 +1832,6 @@ body.is-drawerActive .hamburger {
   }
 }
 
-@media screen and (max-width: 1260px) {
-  .info-links__item {
-    padding-inline: 150px;
-  }
-  .info-links__item:nth-child(2) {
-    padding-inline: 150px;
-  }
-}
 @media screen and (max-width: 1024px) {
   .info-links_top {
     flex-direction: column;
@@ -2222,6 +2213,13 @@ body.is-drawerActive .hamburger {
   display: flex;
   background-color: #F0F0F0;
   padding-left: clamp(1rem, -4rem + 20vw, 20rem);
+  white-space: nowrap;
+  line-height: 1.2;
+}
+@media screen and (max-width: 767px) {
+  .breadcrumbs {
+    flex-wrap: wrap;
+  }
 }
 .breadcrumbs li a {
   font-size: 14px;
@@ -2230,8 +2228,8 @@ body.is-drawerActive .hamburger {
 
 .breadcrumbs li + li::before {
   content: "＞";
-  padding: 0 0.3em;
   color: #222222;
+  padding-left: 4px;
   font-size: 14px;
 }
 
@@ -3371,6 +3369,11 @@ span.staff-detail__highlight {
   margin-top: 118px;
   /* ← ヘッダーと同じ高さを確保 */
 }
+@media screen and (max-width: 767px) {
+  .margin {
+    margin-top: 59px;
+  }
+}
 
 .ent-margin {
   margin-top: 59px;
@@ -3686,6 +3689,10 @@ input[type=radio]:checked::before {
 }
 .Form-Item.textarea .Form-Item-Label {
   margin-top: 16px;
+  margin-right: 44px;
+}
+.Form-Item.textarea .wpcf7-form-control-wrap {
+  width: 100%;
 }
 
 .wpcf7-textarea {

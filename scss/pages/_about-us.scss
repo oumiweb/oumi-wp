@@ -114,6 +114,11 @@
   display: flex;
   background-color: #F0F0F0;
   padding-left: clamp(1rem, -4rem + 20vw, 20rem);
+  white-space: nowrap;
+  line-height: 1.2;
+@include mq(md) {
+  flex-wrap: wrap;
+}
 
   li a {
     font-size: 14px;
@@ -122,11 +127,11 @@
 }
 .breadcrumbs li + li::before {
   content: "＞";
-  padding: 0 0.3em;
   color: $black;
+  padding-left: 4px;
   font-size: 14px;
-
 }
+
 
 // 私たちが大切にしていること
 .importance {

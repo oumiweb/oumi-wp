@@ -260,7 +260,7 @@
 
 @include mq("sm") {
   .fv__subtitle {
-    bottom: 12%;
+    bottom: 11%;
   }
 }
 
@@ -1269,7 +1269,7 @@
 }
 
 .info-links__item {
-  @include viewmore-btn($padding: 50px 195px);
+  @include viewmore-btn($padding: 50px 1rem);
   font-size: 20px;
   font-weight: $bold;
   background-color: $white;
@@ -1277,17 +1277,13 @@
   border: none;
   white-space: nowrap;
   text-align: center;
-  flex: 1;
+  flex: 1 1 calc(50% - 16px);
 
   &::after {
     background-image: url(img/icon/big-arrow.png);
     right: 20px;
 
   }
-}
-
-.info-links__item:nth-child(2) {
-  padding-inline: 175px;
 }
 
 .info-links__bottom {
@@ -1307,15 +1303,6 @@
 
 // メディアクエリー
 
-@media screen and (max-width: 1260px) {
-  .info-links__item {
-    padding-inline: 150px;
-  }
-
-  .info-links__item:nth-child(2) {
-    padding-inline: 150px;
-  }
-}
 
 @media screen and (max-width: 1024px) {
   .info-links_top {

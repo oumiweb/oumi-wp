@@ -3,6 +3,10 @@
 .margin {
   margin-top: 118px;
   /* ← ヘッダーと同じ高さを確保 */
+
+  @include mq(md) {
+    margin-top: 59px;
+  }
 }
 
 .ent-margin {
@@ -334,6 +338,11 @@ input[type="radio"]:checked::before {
 
   .Form-Item-Label {
     margin-top: 16px;
+    margin-right: 44px;
+  }
+
+  .wpcf7-form-control-wrap {
+    width: 100%;
   }
 }
 
