@@ -1,9 +1,13 @@
 @use "../base/setting" as *;
 
 .margin {
-  margin-top: 118px; /* ← ヘッダーと同じ高さを確保 */
+  margin-top: 118px;
+  /* ← ヘッダーと同じ高さを確保 */
 }
 
+.ent-margin {
+  margin-top: 59px;
+}
 
 .entry {
   display: flex;
@@ -28,7 +32,7 @@
   border-radius: 10px;
 
   @include mq("md") {
-  padding-inline: 16px;
+    padding-inline: 16px;
   }
 }
 
@@ -91,10 +95,11 @@
   margin-top: 27px;
 
   @include mq("md") {
- flex-direction: column;
- align-items: flex-start;   
- }
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
+
 .wpcf7-form {
   margin-top: 97px;
 }
@@ -113,13 +118,14 @@
   flex: 1;
   width: 100%;
 }
-  .year {
-    display: flex;
 
-    span {
+.year {
+  display: flex;
+
+  span {
     width: 177px;
-    }
-  
+  }
+
   p:nth-child(2) {
     display: flex;
     align-items: center;
@@ -148,6 +154,7 @@
     margin-top: 10px;
   }
 }
+
 // 月日の矢印含む
 
 .form__birth-selects {
@@ -157,6 +164,7 @@
   @include mq("md") {
     flex-direction: column;
   }
+
   span {
     width: 100%;
   }
@@ -165,60 +173,62 @@
     position: relative;
     width: auto;
     display: flex;
-}
-@include mq("md") {
-  .birth_day {
-    flex-direction: row;
-    align-items: center;
-    margin-top: 0;
-}
-}
+  }
 
-.wpcf7-year {
-  width: 168px;
-  margin-right: 10px;
-}
+  @include mq("md") {
+    .birth_day {
+      flex-direction: row;
+      align-items: center;
+      margin-top: 0;
+    }
+  }
+
+  .wpcf7-year {
+    width: 168px;
+    margin-right: 10px;
+  }
+
   @include mq("md") {
     .From-Item year {
-    display: block;
+      display: block;
+    }
   }
-}
 
-.month {
-  margin-left: 234px;
-
-  @include mq("md") {
-    margin-left: 0;
-  }
-}
-
-.birth__label {
-  font-size: 12px;
-  width: 178px;
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    width: 9px;
-    height: 9px;
-    top: 40%;
-    right: 17%;
-    border-top: 1px solid $black;
-    border-right: 1px solid $black;
-    transform: rotate(135deg);
-    pointer-events: none; // ←クリックの邪魔をしない
+  .month {
+    margin-left: 234px;
 
     @include mq("md") {
-      top: 50%;
-      right: 15%;
+      margin-left: 0;
     }
- }
-}
+  }
 
-.wpcf7-validates-as-required {
-  padding: 22px;
-}
+  .birth__label {
+    font-size: 12px;
+    width: 178px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      top: 40%;
+      right: 17%;
+      border-top: 1px solid $black;
+      border-right: 1px solid $black;
+      transform: rotate(135deg);
+      pointer-events: none; // ←クリックの邪魔をしない
+
+      @include mq("md") {
+        top: 50%;
+        right: 15%;
+      }
+    }
+  }
+
+  .wpcf7-validates-as-required {
+    padding: 22px;
+  }
 }
 
 /* Style for the select box */
@@ -232,14 +242,15 @@
   -moz-appearance: none;
   appearance: none;
   font-size: 12px;
-  color: $black; 
-  
-  
+  color: $black;
+
+
 }
 
 
 .select-box:focus {
-  border-color: $black; /* Border color when focused */
+  border-color: $black;
+  /* Border color when focused */
 }
 
 .radio-btn {
@@ -283,7 +294,7 @@ input[type="radio"]:checked::before {
   padding: 0;
   width: 100%;
 
-  .wpcf7-list-item  {
+  .wpcf7-list-item {
     margin-left: 0;
   }
 }
@@ -337,7 +348,7 @@ input[type="radio"]:checked::before {
   .Form-Item-Label {
     width: 128px;
 
-    @include mq(md){
+    @include mq(md) {
       width: auto;
     }
   }
@@ -347,6 +358,10 @@ input[type="radio"]:checked::before {
 .wpcf7-checkbox {
   display: flex;
   flex-direction: column;
+
+  @include mq(md) {
+    padding: 0;
+  }
 }
 
 .checkbox {
@@ -355,6 +370,9 @@ input[type="radio"]:checked::before {
     margin-top: 30px;
   }
 
+  .wpcf7-form-control-wrap {
+    margin-top: 30px;
+  }
 }
 
 input[type="checkbox"] {
@@ -386,11 +404,20 @@ input[type="checkbox"] {
   }
 }
 
+@include mq(md) {
+  .checkbox {
+    .wpcf7-list-item {
+      margin-left: 0;
+    }
+  }
+}
+
 .textarea-xxx {
   flex: 1;
- @include mq(md) {
-  width: 100%;
- }
+
+  @include mq(md) {
+    width: 100%;
+  }
 }
 
 .button-wrap {
@@ -445,7 +472,7 @@ input[type="checkbox"] {
     background-color: none;
     border-radius: none;
     border: none;
-   }
+  }
 }
 
 
@@ -469,4 +496,3 @@ input[type="checkbox"] {
     color: $white;
   }
 }
-

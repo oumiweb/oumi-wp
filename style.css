@@ -1054,7 +1054,8 @@ body.is-drawerActive .hamburger {
   height: 136px;
   margin-left: 100px;
   opacity: 0;
-  transform: translateY(30px); /* 少し下から */
+  transform: translateY(30px);
+  /* 少し下から */
   transition: opacity 1s ease, transform 1s ease;
 }
 
@@ -1761,13 +1762,18 @@ body.is-drawerActive .hamburger {
   left: 50%;
 }
 
+.rec-inner {
+  width: 100%;
+  max-width: 1440px;
+  padding-inline: clamp(1rem, -3.93rem + 21.03vw, 15rem);
+  margin-inline: auto;
+}
+
 .info-links {
   margin-top: 64px;
 }
 
 .info-links_top {
-  width: 100%;
-  max-width: 1440px;
   display: flex;
   justify-content: center;
   gap: 16px;
@@ -1804,18 +1810,17 @@ body.is-drawerActive .hamburger {
   color: #fff; /* ホバー時の文字色を固定（白） */
 }
 .info-links__item::after {
+  background-image: url(img/icon/big-arrow.png);
   right: 20px;
 }
 
 .info-links__item:nth-child(2) {
-  padding-block: clamp(2.063rem, 1.688rem + 1.6vw, 3.125rem);
-  padding-inline: clamp(8.188rem, 7.219rem + 4.13vw, 10.938rem);
+  padding-inline: 175px;
 }
 
 .info-links__bottom {
   display: flex;
   justify-content: center;
-  max-width: 1440px;
   margin-top: 21px;
 }
 .info-links__bottom .info-links__item {
@@ -3363,7 +3368,12 @@ span.staff-detail__highlight {
   }
 }
 .margin {
-  margin-top: 118px; /* ← ヘッダーと同じ高さを確保 */
+  margin-top: 118px;
+  /* ← ヘッダーと同じ高さを確保 */
+}
+
+.ent-margin {
+  margin-top: 59px;
 }
 
 .entry {
@@ -3594,7 +3604,8 @@ span.staff-detail__highlight {
 }
 
 .select-box:focus {
-  border-color: #222222; /* Border color when focused */
+  border-color: #222222;
+  /* Border color when focused */
 }
 
 .radio-btn {
@@ -3698,9 +3709,17 @@ input[type=radio]:checked::before {
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 767px) {
+  .wpcf7-checkbox {
+    padding: 0;
+  }
+}
 
 .checkbox .Form-Item-Label {
   line-height: 1.5;
+  margin-top: 30px;
+}
+.checkbox .wpcf7-form-control-wrap {
   margin-top: 30px;
 }
 
@@ -3730,6 +3749,11 @@ input[type=checkbox]:checked::after {
   display: block;
 }
 
+@media screen and (max-width: 767px) {
+  .checkbox .wpcf7-list-item {
+    margin-left: 0;
+  }
+}
 .textarea-xxx {
   flex: 1;
 }

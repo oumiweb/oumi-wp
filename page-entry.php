@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main>
-  <ol class="breadcrumbs margin">
+  <ol class="breadcrumbs ent-margin">
     <?php if (function_exists('bcn_display')) bcn_display_list(); ?>
   </ol>
   <section class="entry">

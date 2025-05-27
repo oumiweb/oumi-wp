@@ -251,7 +251,7 @@
       </section>
 
       <section class="top-recruitment">
-        <div class="section-inner">
+        <div class="rec-inner">
           <div class="title-box">
             <span class="title-box__en">RECRUITMENT</span>
             <h2 class="title-box__ja">採用情報</h2>
