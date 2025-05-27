@@ -27,13 +27,13 @@
     <?php if (is_front_page()) : ?>
       <div class="header--white">
         <!-- トップページ用ロゴ・ナビ -->
-        <h1>
+        <div>
           <a href="<?php echo esc_url(home_url('/')); ?>">
             <img class="header__logo-img header__logo-img--white"
               src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo/tetote-logo-white.png"
               alt="株式会社TETOTE | テクノロジーで社会課題を解決する">
           </a>
-        </h1>
+        </div>
         <nav class="header__nav">
           <ul class="header__nav-list">
             <li class="header__nav-item"><a href="<?php echo esc_url(home_url('/details/')); ?>" class="recruitment_btn">募集要項</a></li>
@@ -49,13 +49,13 @@
     <?php else : ?>
       <div class="header--black">
         <!-- 下層ページ用ロゴ・ナビ -->
-        <h1>
+        <div>
           <a href="<?php echo esc_url(home_url('/')); ?>">
             <img class="header__logo-img header__logo-img--black"
               src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo/tetote-logo-black.png"
               alt="株式会社TETOTE | テクノロジーで社会課題を解決する">
           </a>
-        </h1>
+        </div>
         <nav class="header__nav">
           <ul class="header__nav-list">
             <li class="header__nav-item"><a href="<?php echo esc_url(home_url('/details/')); ?>" class="recruitment_btn">募集要項</a></li>
@@ -71,9 +71,9 @@
     <?php endif; ?>
 
     <div class="header--black">
-      <h1><a href="<?php echo esc_url(home_url('/')); ?>"><img class="header__logo-img header__logo-img--black"
+      <div><a href="<?php echo esc_url(home_url('/')); ?>"><img class="header__logo-img header__logo-img--black"
             src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo/tetote-logo-black.png" alt="株式会社TETOTE | テクノロジーで社会課題を解決する"></a>
-      </h1>
+      </div>
       <nav class="header__nav">
         <ul class="header__nav-list">
           <li class="header__nav-item"><a href="<?php echo esc_url(home_url('/')); ?>details/" class="recruitment_btn">募集要項</a></li>
@@ -88,9 +88,9 @@
     </div>
     <div class="sp-global-menu" id="js-global-menu" aria-hidden="true">
       <header class="header--sp">
-        <h1><a href="<?php echo esc_url(home_url('/')); ?>"><img class="header__logo-img header__logo-img--black"
+        <div><a href="<?php echo esc_url(home_url('/')); ?>"><img class="header__logo-img header__logo-img--black"
               src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo/tetote-logo-black.png" alt="株式会社TETOTE | テクノロジーで社会課題を解決する"></a>
-        </h1>
+        </div>
         <nav class="header__nav">
           <ul class="header__nav-list">
             <li class="header__nav-item"><a href="<?php echo esc_url(home_url('/')); ?>details/" class="recruitment_btn recruitment_btn--sp">募集要項</a></li>

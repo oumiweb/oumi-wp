@@ -53,6 +53,7 @@ span.staff-detail__highlight {
   align-items: end;
   margin-top: 12px;
 }
+
 .staff-detail__year {
   font-weight: $normal;
   margin-left: 20px;
@@ -75,7 +76,7 @@ span.staff-detail__highlight {
 
   img {
     width: 100%;
- }
+  }
 }
 
 
@@ -90,7 +91,7 @@ span.staff-detail__highlight {
   max-width: 1926px;
   margin-inline: auto;
   padding-left: clamp(1rem, -3.974rem + 21.22vw, 14.375rem);
-  padding-right:clamp(1rem, -3.974rem + 21.22vw, 14.375rem);
+  padding-right: clamp(1rem, -3.974rem + 21.22vw, 14.375rem);
 }
 
 .staff-article__wrapper {
@@ -98,11 +99,10 @@ span.staff-detail__highlight {
   align-items: stretch;
   overflow: visible;
   height: auto;
-  
   gap: 56px;
 
   @include mq("md") {
-    gap: 10px;
+    gap: 0;
   }
 }
 
@@ -110,30 +110,43 @@ span.staff-detail__highlight {
   p {
     line-height: 1.8;
   }
-  h2 + p {
+
+  h2+p {
     margin-top: 50px;
   }
 }
 
 .staff-article__content {
   width: 75%;
+
   ul {
     padding-top: 50px;
   }
-  li{
+
+  li {
     line-height: 1.8;
   }
+
+  @include mq(md) {
+    width: 100%;
+  }
 }
+
 .staff-article__title {
   position: relative;
- &::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -250px;
-  width: 216px; // 横線の長さ
-  border: 1px solid $black; // 線の色
- }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -250px;
+    width: 216px; // 横線の長さ
+    border: 1px solid $black; // 線の色
+
+    @include mq(md) {
+      left: -222px;
+    }
+  }
 }
 
 .staff-article__title:not(:first-of-type) {
@@ -146,6 +159,10 @@ span.staff-detail__highlight {
   width: 25%;
   height: fit-content;
   white-space: nowrap;
+
+  @include mq(md) {
+    display: none;
+  }
 }
 
 .toc-link {
@@ -156,7 +173,7 @@ span.staff-detail__highlight {
   font-size: 14px;
   text-decoration: none;
 
-  &.is-active{
+  &.is-active {
     color: $black;
   }
 }
@@ -180,7 +197,7 @@ span.staff-detail__highlight {
 
 .other-members {
   padding-top: 84px;
- 
+
   h2 {
     font-size: 32px;
     line-height: 1.8;
@@ -190,12 +207,22 @@ span.staff-detail__highlight {
     justify-content: center
   }
 }
+
 .staff-cards-wrapper {
   margin: 50px 0 139px 0;
   display: flex;
   gap: 43px;
   align-items: center;
   justify-content: center;
+
+  @include mq(md) {
+    overflow-x: hidden;
+  }
 }
-
-
+@include mq(md) {
+.other-members {
+  .section-inner {
+    padding-inline: 0;
+  }
+}
+}

@@ -11,7 +11,7 @@
           <article class="blog-detail__article">
             <header>
               <p class="blog-detail__meta">社内研修　2023.03.25</p>
-              <h2 class="blog-detail__title"><?php the_title(); ?></h2>
+              <h1 class="blog-detail__title"><?php the_title(); ?></h1>
               <?php if (has_post_thumbnail()): ?>
                 <div class="blog-detail__image">
                   <?php the_post_thumbnail('full'); ?>

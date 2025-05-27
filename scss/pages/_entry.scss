@@ -115,6 +115,10 @@
 }
   .year {
     display: flex;
+
+    span {
+    width: 177px;
+    }
   
   p:nth-child(2) {
     display: flex;
@@ -126,6 +130,12 @@
   color: #AFA86F;
 }
 
+@include mq("md") {
+  .month {
+    flex-direction: row;
+    align-items: center;
+  }
+}
 
 .wpcf7-form-control {
   width: 93%;
@@ -144,11 +154,9 @@
   display: flex;
   gap: 25px;
 
-  @include mq("sm") {
-    display: block;
+  @include mq("md") {
+    flex-direction: column;
   }
-
-
   span {
     width: 100%;
   }
@@ -157,33 +165,13 @@
     position: relative;
     width: auto;
     display: flex;
-
-    @include mq("md") {
-      display: block;
-    }
-  
-    &::after {
-      content: "";
-      position: absolute;
-      width: 9px;
-      height: 9px;
-      top: 40%;
-      right: 23%;
-      border-top: 1px solid $black;
-      border-right: 1px solid $black;
-      transform: rotate(135deg);
-      pointer-events: none; // ←クリックの邪魔をしない
-
-      @include mq("md") {
-        top: 50%;
-        right: 15%;
-      }
-
-      @include mq("sm") {
-        right: 68%;
-      }
-    }
-  }
+}
+@include mq("md") {
+  .birth_day {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0;
+}
 }
 
 .wpcf7-year {
@@ -198,8 +186,6 @@
 
 .month {
   margin-left: 234px;
-  display: flex;
-  justify-content: space-between;
 
   @include mq("md") {
     margin-left: 0;
@@ -209,7 +195,26 @@
 .birth__label {
   font-size: 12px;
   width: 178px;
-  display: flex;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    top: 40%;
+    right: 17%;
+    border-top: 1px solid $black;
+    border-right: 1px solid $black;
+    transform: rotate(135deg);
+    pointer-events: none; // ←クリックの邪魔をしない
+
+    @include mq("md") {
+      top: 50%;
+      right: 15%;
+    }
+ }
+}
 
 .wpcf7-validates-as-required {
   padding: 22px;
@@ -231,17 +236,7 @@
   
   
 }
-.birth__unit {
-  @include mq("md") {
-  position: absolute;
-  top: 50%;
-  right: -9%;
-}
 
-@include mq("sm") {
-  right: 58.5%;
- }
-}
 
 .select-box:focus {
   border-color: $black; /* Border color when focused */
@@ -287,6 +282,10 @@ input[type="radio"]:checked::before {
   flex-direction: column;
   padding: 0;
   width: 100%;
+
+  .wpcf7-list-item  {
+    margin-left: 0;
+  }
 }
 
 .wpcf7-list-item {
@@ -337,6 +336,10 @@ input[type="radio"]:checked::before {
 
   .Form-Item-Label {
     width: 128px;
+
+    @include mq(md){
+      width: auto;
+    }
   }
 }
 
@@ -385,6 +388,9 @@ input[type="checkbox"] {
 
 .textarea-xxx {
   flex: 1;
+ @include mq(md) {
+  width: 100%;
+ }
 }
 
 .button-wrap {

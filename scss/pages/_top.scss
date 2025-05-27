@@ -4,7 +4,7 @@
 
 .section-inner {
   width: 100%;
-  max-width: 1926px;
+  max-width: 1440px;
   padding-left: clamp(1rem, -3.974rem + 21.22vw, 15.125rem);
   padding-right:clamp(1rem, -3.974rem + 21.22vw, 15.125rem);
   margin-right: auto;
@@ -93,7 +93,7 @@
   background-color: $black;
   color: $white;
   font-family: Viga;
-  padding: clamp(9px, 2vw, 17px) clamp(24px, 6vw, 66px);
+  padding: clamp(9px, 1.5vw, 17px) clamp(24px, 6vw, 66px);
   font-size: clamp(12px, 4vw, 24px);
   font-weight: $bold;
   display: inline-block;
@@ -253,6 +253,12 @@
   }
 }
 
+@include mq("sm") {
+  .fv__subtitle {
+    bottom: 12%;
+ }
+}
+
 // top_about 後悔しないキャリアを作る
 
 .top-about {
@@ -260,15 +266,13 @@
 }
 .top-about__title {
   position: absolute;
-  left: 31%;
+  left: 50%;
   bottom: 16px;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 7px;
-  @media screen and (min-width: 1800px) and (max-width: 2560px) {
-    left: 23%;
-  }
  
 
   span {
@@ -276,9 +280,7 @@
     font-size: clamp(1.5rem, 1.148rem + 1.5vw, 2.5rem);
     padding: 11px;
     background-color: $white;
-    @media screen and (min-width: 1800px) and (max-width: 2560px) {
-      font-size: 5rem;
-    }
+    white-space: nowrap;
   }
 }
 
@@ -424,11 +426,7 @@
   }
 
   .top-about__title {
-    left: -19px;
-    bottom: -17px;
-    margin-inline: 21px;
     width: 100%;
-    gap: 18px;
 
     span {
       padding: 7px 11px;
