@@ -249,18 +249,12 @@
   }
 
   .fv__subtitle {
-    bottom: 10%;
+    bottom: 12%;
     font-size: 12px;
   }
 
   .fv__wrapper {
     bottom: 2%;
-  }
-}
-
-@include mq("sm") {
-  .fv__subtitle {
-    bottom: 11%;
   }
 }
 

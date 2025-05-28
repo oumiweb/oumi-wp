@@ -859,16 +859,11 @@ body.is-drawerActive .hamburger {
     line-height: 1.2;
   }
   .fv__subtitle {
-    bottom: 10%;
+    bottom: 12%;
     font-size: 12px;
   }
   .fv__wrapper {
     bottom: 2%;
-  }
-}
-@media screen and (max-width: 550px) {
-  .fv__subtitle {
-    bottom: 11%;
   }
 }
 .top-about {
