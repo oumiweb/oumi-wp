@@ -1808,8 +1808,20 @@ body.is-drawerActive .hamburger {
   color: #fff; /* ホバー時の文字色を固定（白） */
 }
 .info-links__item::after {
-  background-image: url(img/icon/big-arrow.png);
+  /* マスクとして使用 */
+  mask: url(img/icon/big-arrow.png) no-repeat center;
+  -webkit-mask: url(img/icon/big-arrow.png) no-repeat center;
+  background-color: #222222;
+  /* 矢印の色を指定 */
   right: 20px;
+}
+.info-links__item:hover {
+  background-color: #222222;
+  color: #ffffff;
+}
+.info-links__item:hover::after {
+  background-color: #ffffff;
+  /* ホバー時の矢印の色 */
 }
 
 .info-links__bottom {

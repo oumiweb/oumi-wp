@@ -1274,9 +1274,22 @@
   flex: 1 1 calc(50% - 16px);
 
   &::after {
-    background-image: url(img/icon/big-arrow.png);
-    right: 20px;
-
+      /* マスクとして使用 */
+      mask: url(img/icon/big-arrow.png) no-repeat center;
+      -webkit-mask: url(img/icon/big-arrow.png) no-repeat center;
+      background-color: $black;
+      /* 矢印の色を指定 */
+      right: 20px;
+    }
+  
+    &:hover {
+      background-color: $black;
+      color: $white;
+  
+      &::after {
+        background-color: $white;
+        /* ホバー時の矢印の色 */
+      }
   }
 }
 
