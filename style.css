@@ -2164,11 +2164,6 @@ body.is-drawerActive .hamburger {
     font-size: 36px;
   }
 }
-@media screen and (min-width: 1800px) {
-  .mv__title {
-    font-size: 8rem;
-  }
-}
 
 .mv__title,
 .mv__sub-title,
@@ -2186,12 +2181,6 @@ body.is-drawerActive .hamburger {
   .mv__sub-title,
   .mv__lead {
     font-size: 16px;
-  }
-}
-@media screen and (min-width: 1800px) {
-  .mv__sub-title,
-  .mv__lead {
-    font-size: 2.5rem;
   }
 }
 
