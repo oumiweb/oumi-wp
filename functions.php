@@ -108,3 +108,56 @@ function theme_enqueue_scripts() {
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
 
+function theme_enqueue_styles() {
+  // Google Fonts のプリコネクト（通信高速化）
+  wp_enqueue_style(
+    'google-fonts-preconnect',
+    '',
+    [],
+    null
+  );
+  add_action('wp_head', function () {
+    echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
+    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+  });
+
+  // Google Fonts 本体
+  wp_enqueue_style(
+    'google-fonts',
+    'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Viga&display=swap',
+    [],
+    null
+  );
+
+  // Swiper CSS
+  wp_enqueue_style(
+    'swiper-css',
+    'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+    [],
+    '11.0.0'
+  );
+
+  // Slick CSS
+  wp_enqueue_style(
+    'slick-css',
+    get_template_directory_uri() . '/css/slick.css',
+    [],
+    filemtime(get_theme_file_path('css/slick.css'))
+  );
+
+  wp_enqueue_style(
+    'slick-theme-css',
+    get_template_directory_uri() . '/css/slick-theme.css',
+    ['slick-css'],
+    filemtime(get_theme_file_path('css/slick-theme.css'))
+  );
+
+  // style.css（テーマ本体のCSS）
+  wp_enqueue_style(
+    'main-style',
+    get_stylesheet_uri(),
+    [],
+    filemtime(get_theme_file_path('style.css'))
+  );
+}
+add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
